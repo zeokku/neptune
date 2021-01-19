@@ -13,8 +13,23 @@ all: test/PQCgenKAT_kem \
 SOURCES = pack_unpack.c poly.c fips202.c verify.c cbd.c SABER_indcpa.c kem.c
 HEADERS = SABER_params.h pack_unpack.h poly.h rng.h fips202.h verify.h cbd.h SABER_indcpa.h 
 
-test/test_kex: $(SOURCES) $(HEADERS) rng.o test/test_kex.c
-	$(CC) $(CFLAGS) -o $@ $(SOURCES) rng.o test/test_kex.c -lcrypto -lwolfssl
+OBJ_FOLDER = obj
+
+saber.a: $(SOURCES) $(HEADERS) rng.o
+	# $(foreach file,$(SOURCES), \
+	# 	$(CC) $(CFLAGS) -lcrypto -lwolfssl -c $(file) -o $(OBJ_FOLDER)/$(notdir $(basename $(file))).o ; \
+	# )
+
+	$(CC) $(CFLAGS) -c $(SOURCES)
+
+	mv *.o ./$(OBJ_FOLDER)
+
+	ar rvs saber.a $(wildcard $(OBJ_FOLDER)/*.o)
+
+# undefined reference problem is caused by order of files supplied to linker, so moving lib at the end fixes the issue
+
+test/test_kex: saber.a $(SOURCES) $(HEADERS) rng.o test/test_kex.c
+	$(CC) $(CFLAGS) -o $@ test/test_kex.c saber.a -lcrypto -lwolfssl
 
 test/PQCgenKAT_kem: $(SOURCES) $(HEADERS) rng.o test/PQCgenKAT_kem.c 
 	$(CC) $(NISTFLAGS) -o $@ $(SOURCES) rng.o test/PQCgenKAT_kem.c -lcrypto -lwolfssl

@@ -22,9 +22,9 @@
 
 #include "debug.h"
 
-// #include "saber/rng.h"
-// #include "saber/api.h"
-// #include "saber/SABER_params.h"
+#include "saber/rng.h"
+#include "saber/api.h"
+#include "saber/SABER_params.h"
 
 using namespace std;
 using namespace neptune::packets;
@@ -32,98 +32,102 @@ using namespace neptune::packets;
 int main()
 {
 
-    // uint8_t pk[SABER_PUBLICKEYBYTES];
-    // uint8_t sk[SABER_SECRETKEYBYTES];
-    // uint8_t c[SABER_BYTES_CCA_DEC];
-    // uint8_t k_a[SABER_KEYBYTES], k_b[SABER_KEYBYTES];
+    uint8_t pk[SABER_PUBLICKEYBYTES];
+    uint8_t sk[SABER_SECRETKEYBYTES];
+    uint8_t c[SABER_CIPHERTEXTBYTES];
+    uint8_t k_a[SABER_KEYBYTES], k_b[SABER_KEYBYTES];
 
-    // unsigned char entropy_input[48];
+    unsigned char entropy_input[48];
 
-    // for (int i = 0; i < 48; i++)
+    for (int i = 0; i < 48; i++)
+    {
+        entropy_input[i] = i;
+        //entropy_input[i] = rand()%256;
+    }
+    randombytes_init(entropy_input, NULL, 256);
+
+    saber_kem_keypair(pk, sk);
+
+    printf("pk\n");
+    print_bytes(pk, sizeof(pk));
+
+    printf("sk\n");
+    print_bytes(sk, sizeof(sk));
+
+    saber_kem_enc(c, k_a, pk);
+    saber_kem_dec(k_b, c, sk);
+
+    printf("k_a\n");
+    print_bytes(k_a, sizeof(k_a));
+
+    printf("k_b\n");
+    print_bytes(k_b, sizeof(k_b));
+
+    return 0;
+
+//#######
+
+    // int ret;
+
+    // WC_RNG rng;
+    // ret = wc_InitRng(&rng);
+    // if (ret != 0)
     // {
-    //     entropy_input[i] = i;
-    //     //entropy_input[i] = rand()%256;
+    //     printf("Rng init: %s", wc_GetErrorString(ret));
     // }
-    // randombytes_init(entropy_input, NULL, 256);
 
-    // saber_kem_keypair(pk, sk);
+    // curve25519_key bob;
+    // wc_curve25519_init(&bob);
+    // ret = wc_curve25519_make_key(&rng, CURVE25519_KEYSIZE, &bob);
 
-    // printf("pk\n");
-    // print_bytes(pk, sizeof(pk));
+    // printf("ret: %d\n", ret);
 
-    // printf("sk\n");
-    // print_bytes(sk, sizeof(sk));
+    // curve25519_key alice;
+    // wc_curve25519_init(&alice);
+    // ret = wc_curve25519_make_key(&rng, CURVE25519_KEYSIZE, &alice);
 
-    // saber_kem_enc(c, k_a, pk);
-    // saber_kem_dec(k_b, c, sk);
+    // //if not define length returns BAD_FUNC_ARG randomly for some reason
+    // word32 bob_shared_size = CURVE25519_KEYSIZE;
+    // byte bob_shared[CURVE25519_KEYSIZE];
+    // ret = wc_curve25519_shared_secret(&bob, &alice, bob_shared, &bob_shared_size);
 
-    // printf("k_a\n");
-    // print_bytes(k_a, sizeof(k_a));
+    // //if !0 err
 
-    // printf("k_b\n");
-    // print_bytes(k_b, sizeof(k_b));
+    // word32 alice_shared_size = CURVE25519_KEYSIZE;
+    // byte alice_shared[CURVE25519_KEYSIZE];
+    // ret = wc_curve25519_shared_secret(&alice, &bob, alice_shared, &alice_shared_size);
 
-    // return 0;
+    // printf("bob shared key (%d):\n", bob_shared_size);
+    // print_bytes(bob_shared, sizeof(bob_shared));
 
-    int ret;
+    // printf("alice shared key (%d):\n", alice_shared_size);
+    // print_bytes(alice_shared, sizeof(alice_shared));
 
-    WC_RNG rng;
-    ret = wc_InitRng(&rng);
-    if (ret != 0)
-    {
-        printf("Rng init: %s", wc_GetErrorString(ret));
-    }
+    // wc_curve25519_free(&bob);
+    // wc_curve25519_free(&alice);
 
-    curve25519_key bob;
-    wc_curve25519_init(&bob);
-    ret = wc_curve25519_make_key(&rng, CURVE25519_KEYSIZE, &bob);
+    // if (memcmp(bob_shared, alice_shared, CURVE25519_KEYSIZE) == 0)
+    // {
+    //     printf("keys match!\n");
+    // }
+    // else
+    // {
+    //     printf("keys don't match!\n");
+    // }
 
-    printf("ret: %d\n", ret);
+    // //
 
-    curve25519_key alice;
-    wc_curve25519_init(&alice);
-    ret = wc_curve25519_make_key(&rng, CURVE25519_KEYSIZE, &alice);
+    // Handshake *hs = new Handshake();
+    // KEM_PublicKey *kem_pk = hs->add_kem_keys();
+    // kem_pk->set_key(bob_shared, CURVE25519_KEYSIZE);
 
-    //if not define length returns BAD_FUNC_ARG randomly for some reason
-    word32 bob_shared_size = CURVE25519_KEYSIZE;
-    byte bob_shared[CURVE25519_KEYSIZE];
-    ret = wc_curve25519_shared_secret(&bob, &alice, bob_shared, &bob_shared_size);
+    // //kem_pk->clear_key
 
-    //if !0 err
+    // print_bytes((byte *)(kem_pk->key().c_str()), CURVE25519_KEYSIZE);
 
-    word32 alice_shared_size = CURVE25519_KEYSIZE;
-    byte alice_shared[CURVE25519_KEYSIZE];
-    ret = wc_curve25519_shared_secret(&alice, &bob, alice_shared, &alice_shared_size);
+    // hs->~Handshake();
 
-    printf("bob shared key (%d):\n", bob_shared_size);
-    print_bytes(bob_shared, sizeof(bob_shared));
-
-    printf("alice shared key (%d):\n", alice_shared_size);
-    print_bytes(alice_shared, sizeof(alice_shared));
-
-    wc_curve25519_free(&bob);
-    wc_curve25519_free(&alice);
-
-    if (memcmp(bob_shared, alice_shared, CURVE25519_KEYSIZE) == 0)
-    {
-        printf("keys match!\n");
-    }
-    else
-    {
-        printf("keys don't match!\n");
-    }
-
-    //
-
-    Handshake *hs = new Handshake();
-    KEM_PublicKey *kem_pk = hs->add_kem_keys();
-    kem_pk->set_key(bob_shared, CURVE25519_KEYSIZE);
-
-    //kem_pk->clear_key
-
-    print_bytes((byte *)(kem_pk->key().c_str()), CURVE25519_KEYSIZE);
-
-    hs->~Handshake();
+//$$$$
 
     // ed25519_key bob;
     // wc_ed25519_make_key(&rng, ED25519_KEY_SIZE, &bob);
@@ -168,7 +172,7 @@ int main()
 
     // hs->~Handshake();
 
-    wc_FreeRng(&rng);
+//    wc_FreeRng(&rng);
 
     return 0;
 

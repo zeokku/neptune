@@ -10,6 +10,8 @@ PBUF_LIB = /usr/lib/libprotobuf-lite.a #-lprotobuf-lite
 #-Wl,-Bstatic
 LIBS= /usr/lib/libwolfssl.a $(PBUF_LIB) #-lwolfssl 
 
+ALGOS_LIBS = ./saber/saber.a
+
 SRC:=$(wildcard  *.cpp) $(wildcard  *.hpp)
 OUT_EXE=neptune
 
@@ -49,7 +51,7 @@ saber: $(SABER_SRC)
 OBJ_FILES=$(wildcard $(OBJ_FOLDER)/*.o)
 
 compile: $(SRC)
-	g++ $(FLAGS) $(SRC) $(OBJ_FILES) $(LIBS) -o $(OUT_EXE)
+	g++ $(FLAGS) $(SRC) $(OBJ_FILES) $(ALGOS_LIBS) $(LIBS) -o $(OUT_EXE)
 
 run: compile 	
 	./$(OUT_EXE)	
