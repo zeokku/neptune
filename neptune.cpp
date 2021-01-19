@@ -32,18 +32,32 @@ using namespace neptune::packets;
 int main()
 {
 
+    int wc_res;
+
+    WC_RNG rng;
+    wc_res = wc_InitRng(&rng);
+    if (wc_res != 0)
+    {
+        printf("Rng init: %s", wc_GetErrorString(wc_res));
+    }
+
     uint8_t pk[SABER_PUBLICKEYBYTES];
     uint8_t sk[SABER_SECRETKEYBYTES];
     uint8_t c[SABER_CIPHERTEXTBYTES];
     uint8_t k_a[SABER_KEYBYTES], k_b[SABER_KEYBYTES];
 
     unsigned char entropy_input[48];
+    wc_res = wc_RNG_GenerateBlock(&rng, entropy_input, sizeof(entropy_input));
 
-    for (int i = 0; i < 48; i++)
-    {
-        entropy_input[i] = i;
-        //entropy_input[i] = rand()%256;
-    }
+    // for (int i = 0; i < 48; i++)
+    // {
+    //     //debug
+    //     //entropy_input[i] = i;
+    //     //entropy_input[i] = rand() % 256;
+
+    //     wc_res = wc_RNG_GenerateByte(&rng, &entropy_input[i]);
+    // }
+
     randombytes_init(entropy_input, NULL, 256);
 
     saber_kem_keypair(pk, sk);
@@ -65,16 +79,7 @@ int main()
 
     return 0;
 
-//#######
-
-    // int ret;
-
-    // WC_RNG rng;
-    // ret = wc_InitRng(&rng);
-    // if (ret != 0)
-    // {
-    //     printf("Rng init: %s", wc_GetErrorString(ret));
-    // }
+    //#######
 
     // curve25519_key bob;
     // wc_curve25519_init(&bob);
@@ -127,7 +132,7 @@ int main()
 
     // hs->~Handshake();
 
-//$$$$
+    //$$$$
 
     // ed25519_key bob;
     // wc_ed25519_make_key(&rng, ED25519_KEY_SIZE, &bob);
@@ -172,7 +177,7 @@ int main()
 
     // hs->~Handshake();
 
-//    wc_FreeRng(&rng);
+    //    wc_FreeRng(&rng);
 
     return 0;
 
