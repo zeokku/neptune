@@ -1,0 +1,270 @@
+--disable-option-checking  ignore unrecognized --enable/--with options
+  --disable-FEATURE       do not include FEATURE (same as --enable-FEATURE=no)
+  --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
+  --enable-dependency-tracking
+                          do not reject slow dependency extractors
+  --disable-dependency-tracking
+                          speeds up one-time build
+  --enable-silent-rules   less verbose build output (undo: "make V=1")
+  --disable-silent-rules  verbose build output (undo: "make V=0")
+  --enable-static[=PKGS]  build static libraries [default=no]
+  --enable-shared[=PKGS]  build shared libraries [default=yes]
+  --enable-fast-install[=PKGS]
+                          optimize for fast installation [default=yes]
+  --disable-libtool-lock  avoid locking (might break parallel builds)
+  --enable-debug          Add debug code/turns off optimizations (yes|no)
+                          [default=no]
+  --enable-fips           Enable FIPS 140-2, Will NOT work w/o FIPS license
+                          (default: disabled)
+  --enable-distro         Enable wolfSSL distro build (default: disabled)
+  --enable-all            Enable all wolfSSL features, except SSLv3 (default:
+                          disabled)
+  --enable-32bit          Enables 32-bit support (default: disabled)
+  --enable-16bit          Enables 16-bit support (default: disabled)
+  --enable-asm            Enables option for assembly (default: enabled)
+  --enable-singlethreaded Enable wolfSSL single threaded (default: disabled)
+  --enable-dtls           Enable wolfSSL DTLS (default: disabled)
+  --enable-dtls-mtu       Enable setting the MTU size for wolfSSL DTLS
+                          (default: disabled)
+  --enable-tls13-draft18  Enable wolfSSL TLS v1.3 Draft 18 (default: disabled)
+  --enable-tls13          Enable wolfSSL TLS v1.3 (default: enabled)
+  --enable-postauth       Enable wolfSSL Post-handshake Authentication
+                          (default: disabled)
+  --enable-hrrcookie      Enable the server to send Cookie Extension in HRR
+                          with state (default: disabled)
+  --enable-rng            Enable compiling and using RNG (default: enabled)
+  --enable-sctp           Enable wolfSSL DTLS-SCTP support (default: disabled)
+  --enable-mcast          Enable wolfSSL DTLS multicast support (default:
+                          disabled)
+  --enable-openssh        Enable OpenSSH compatibility build (default:
+                          disabled)
+  --enable-openvpn        Enable OpenVPN compatibility build (default:
+                          disabled)
+  --enable-nginx          Enable nginx (default: disabled)
+  --enable-haproxy        Enable haproxy (default: disabled)
+  --enable-wpas           Enable wpa_supplicant support (default: disabled)
+  --enable-wpas-dpp       Enable wpa_supplicant support with dpp (default:
+                          disabled)
+  --enable-fortress       Enable SSL fortress build (default: disabled)
+  --enable-libwebsockets  Enable libwebsockets (default: disabled)
+  --enable-ip-alt-name    Enable IP subject alternative name (default:
+                          disabled)
+  --enable-qt             Enable qt (default: disabled)
+  --enable-bump           Enable SSL Bump build (default: disabled)
+  --enable-sniffer        Enable wolfSSL sniffer support (default: disabled)
+  --enable-signal         Enable signal (default: disabled)
+  --enable-opensslcoexist Enable coexistence of wolfssl/openssl (default:
+                          disabled)
+  --enable-opensslall     Enable all OpenSSL API, size++ (default: disabled)
+  --enable-opensslextra   Enable extra OpenSSL API, size+ (default: disabled)
+  --enable-maxstrength    Enable Max Strength build, allows TLSv1.2-AEAD-PFS
+                          ciphers only (default: disabled)
+  --enable-harden         Enable Hardened build, Enables Timing Resistance and
+                          Blinding (default: enabled)
+  --enable-ipv6           Enable testing of IPV6 (default: disabled)
+  --enable-leanpsk        Enable Lean PSK build (default: disabled)
+  --enable-leantls        Enable Lean TLS build (default: disabled)
+  --enable-lowresource    Enable low resource options for memory/flash
+                          (default: disabled)
+  --enable-titancache     Enable titan session cache (default: disabled)
+  --enable-hugecache      Enable huge session cache (default: disabled)
+  --enable-bigcache       Enable big session cache (default: disabled)
+  --enable-smallcache     Enable small session cache (default: disabled)
+  --enable-savesession    Enable persistent session cache (default: disabled)
+  --enable-savecert       Enable persistent cert cache (default: disabled)
+  --enable-writedup       Enable write duplication of WOLFSSL objects
+                          (default: disabled)
+  --enable-atomicuser     Enable Atomic User Record Layer (default: disabled)
+  --enable-pkcallbacks    Enable Public Key Callbacks (default: disabled)
+  --enable-aescbc         Enable wolfSSL AES-CBC support (default: enabled)
+  --enable-aesgcm         Enable wolfSSL AES-GCM support (default: enabled)
+  --enable-aesccm         Enable wolfSSL AES-CCM support (default: disabled)
+  --enable-aesctr         Enable wolfSSL AES-CTR support (default: disabled)
+  --enable-aesofb         Enable wolfSSL AES-OFB support (default: disabled)
+  --enable-aescfb         Enable wolfSSL AES-CFB support (default: disabled)
+  --enable-armasm         Enable wolfSSL ARMv8 ASM support (default: disabled)
+  --enable-xilinx         Enable wolfSSL support for Xilinx hardened
+                          crypto(default: disabled)
+  --enable-aesni          Enable wolfSSL AES-NI support (default: disabled)
+  --enable-intelasm       Enable All Intel ASM speedups (default: disabled)
+  --enable-intelrand      Enable Intel rdrand as preferred RNG source
+                          (default: disabled)
+  --enable-afalg          Enable Linux af_alg use for crypto (default:
+                          disabled)
+  --enable-devcrypto      Enable Linux dev crypto calls: all | aes (all aes
+                          support) | hash (all hash algos) | cbc (aes-cbc
+                          only) (default: disabled)
+  --enable-camellia       Enable wolfSSL Camellia support (default: disabled)
+  --enable-md2            Enable wolfSSL MD2 support (default: disabled)
+  --enable-nullcipher     Enable wolfSSL NULL cipher support (default:
+                          disabled)
+  --enable-ripemd         Enable wolfSSL RIPEMD-160 support (default:
+                          disabled)
+  --enable-blake2         Enable wolfSSL BLAKE2b support (default: disabled)
+  --enable-blake2s        Enable wolfSSL BLAKE2s support (default: disabled)
+  --enable-sha512         Enable wolfSSL SHA-512 support (default: enabled)
+  --enable-sha384         Enable wolfSSL SHA-384 support (default: enabled)
+  --enable-sessioncerts   Enable session cert storing (default: disabled)
+  --enable-keygen         Enable key generation (default: disabled)
+  --enable-certgen        Enable cert generation (default: disabled)
+  --enable-certreq        Enable cert request generation (default: disabled)
+  --enable-certext        Enable cert request extensions (default: disabled)
+  --enable-certgencache   Enable decoded cert caching (default: disabled)
+  --enable-sep            Enable sep extensions (default: disabled)
+  --enable-hkdf           Enable HKDF (HMAC-KDF) support (default: disabled)
+  --enable-x963kdf        Enable X9.63 KDF support (default: disabled)
+  --enable-dsa            Enable DSA (default: disabled)
+  --enable-eccshamir      Enable ECC Shamir (default: enabled)
+  --enable-ecc            Enable ECC (default: enabled)
+  --enable-ecccustcurves  Enable ECC custom curves (default: disabled)
+  --enable-compkey        Enable compressed keys support (default: disabled)
+  --enable-curve25519     Enable Curve25519 (default: disabled)
+  --enable-ed25519        Enable ED25519 (default: disabled)
+  --enable-curve448       Enable Curve448 (default: disabled)
+  --enable-ed448          Enable ED448 (default: disabled)
+  --enable-fpecc          Enable Fixed Point cache ECC (default: disabled)
+  --enable-eccencrypt     Enable ECC encrypt (default: disabled)
+  --enable-psk            Enable PSK (default: disabled)
+  --enable-psk-one-id     Enable PSK (default: disabled)
+  --enable-errorstrings   Enable error strings table (default: enabled)
+  --disable-errorqueue    Disables adding nodes to error queue when compiled
+                          with OPENSSL_EXTRA (default: enabled)
+  --enable-oldtls         Enable old TLS versions < 1.2 (default: enabled)
+  --enable-tlsv12         Enable TLS versions 1.2 (default: enabled)
+  --enable-tlsv10         Enable old TLS versions 1.0 (default: disabled)
+  --enable-sslv3          Enable SSL version 3.0 (default: disabled)
+  --enable-stacksize      Enable stack size info on examples (default:
+                          disabled)
+  --enable-memory         Enable memory callbacks (default: enabled)
+  --enable-trackmemory    Enable memory use info on wolfCrypt and wolfSSL
+                          cleanup (default: disabled)
+  --enable-memorylog      Enable dynamic memory logging (default: disabled)
+  --enable-stacklog       Enable stack logging (default: disabled)
+  --enable-qt-test        Enable qt tests (default: disabled)
+  --enable-rsa            Enable RSA (default: enabled)
+  --enable-oaep           Enable RSA OAEP (default: enabled)
+  --enable-rsapub         Enable RSA Public Only (default: disabled)
+  --enable-rsavfy         Enable RSA Verify Inline Only (default: disabled)
+  --enable-rsapss         Enable RSA-PSS (default: disabled)
+  --enable-dh             Enable DH (default: enabled)
+  --enable-anon           Enable Anonymous (default: disabled)
+  --enable-asn            Enable ASN (default: enabled)
+  --enable-aes            Enable AES (default: enabled)
+  --enable-coding         Enable Coding base 16/64 (default: enabled)
+  --enable-base64encode   Enable Base64 encoding (default: enabled on x86_64)
+  --enable-base16         Enable Base16 encoding/decoding (default: disabled)
+  --enable-des3           Enable DES3 (default: disabled)
+  --enable-idea           Enable IDEA Cipher (default: disabled)
+  --enable-arc4           Enable ARC4 (default: disabled)
+  --enable-md5            Enable MD5 (default: enabled)
+  --enable-sha            Enable SHA (default: enabled)
+  --enable-cmac           Enable CMAC (default: disabled)
+  --enable-xts            Enable XTS (default: disabled)
+  --enable-webserver      Enable Web Server (default: disabled)
+  --enable-webclient      Enable Web Client (HTTP) (default: disabled)
+  --enable-hc128          Enable HC-128 (default: disabled)
+  --enable-rabbit         Enable RABBIT (default: disabled)
+  --enable-selftest       Enable selftest, Will NOT work w/o CAVP selftest
+                          license (default: disabled)
+  --enable-sha224         Enable wolfSSL SHA-224 support (default: enabled on
+                          x86_64/aarch64)
+  --enable-sha3           Enable wolfSSL SHA-3 support (default: enabled on
+                          x86_64/aarch64)
+  --enable-shake256       Enable wolfSSL SHAKE256 support (default: enabled on
+                          x86_64/aarch64)
+  --enable-poly1305       Enable wolfSSL POLY1305 support (default: enabled)
+  --enable-chacha         Enable CHACHA (default: enabled). Use `=noasm` to
+                          disable ASM AVX/AVX2 speedups
+  --enable-hashdrbg       Enable Hash DRBG support (default: enabled)
+  --enable-filesystem     Enable Filesystem support (default: enabled)
+  --enable-inline         Enable inline functions (default: enabled)
+  --enable-ocsp           Enable OCSP (default: disabled)
+  --enable-ocspstapling   Enable OCSP Stapling (default: disabled)
+  --enable-ocspstapling2  Enable OCSP Stapling v2 (default: disabled)
+  --enable-crl            Enable CRL (default: disabled)
+  --enable-crl-monitor    Enable CRL Monitor (default: disabled)
+  --enable-qsh            Enable QSH (default: disabled)
+  --enable-sni            Enable SNI (default: disabled)
+  --enable-maxfragment    Enable Maximum Fragment Length (default: disabled)
+  --enable-alpn           Enable ALPN (default: disabled)
+  --enable-trustedca      Enable Trusted CA Indication (default: disabled)
+  --enable-truncatedhmac  Enable Truncated HMAC (default: disabled)
+  --enable-renegotiation-indication
+                          Enable Renegotiation Indication (default: disabled)
+  --enable-secure-renegotiation
+                          Enable Secure Renegotiation (default: disabled)
+  --enable-fallback-scsv  Enable Fallback SCSV (default: disabled)
+  --enable-supportedcurves
+                          Enable Supported Elliptic Curves (default: enabled)
+  --enable-ffdhe-only     Enable using only FFDHE in client (default:
+                          disabled)
+  --enable-session-ticket Enable Session Ticket (default: disabled)
+  --enable-extended-master
+                          Enable Extended Master Secret (default: enabled)
+  --enable-tlsx           Enable all TLS Extensions (default: disabled)
+  --enable-earlydata      Enable Early Data handshake with wolfSSL TLS v1.3
+                          (default: disabled)
+  --enable-pkcs7          Enable PKCS7 (default: disabled)
+  --enable-ssh            Enable wolfSSH options (default: disabled)
+  --enable-scep           Enable wolfSCEP (default: disabled)
+  --enable-srp            Enable Secure Remote Password (default: disabled)
+  --enable-indef          Enable parsing of indefinite length encoded msgs
+                          (default: disabled)
+  --enable-smallstackcache
+                          Enable Small Stack Usage Caching (default: disabled)
+  --enable-smallstack     Enable Small Stack Usage (default: disabled)
+  --enable-valgrind       Enable valgrind for unit tests (default: disabled)
+  --enable-testcert       Enable Test Cert (default: disabled)
+  --enable-iopool         Enable I/O Pool example (default: disabled)
+  --enable-certservice    Enable cert service (default: disabled)
+  --enable-jni            Enable wolfSSL JNI (default: disabled)
+  --enable-lighty         Enable lighttpd/lighty (default: disabled)
+  --enable-asio           Enable asio (default: disabled)
+  --enable-apachehttpd    Enable Apache httpd (default: disabled)
+  --enable-enc-then-mac   Enable Encryptr-Then-Mac extension (default:
+                          enabled)
+  --enable-stunnel        Enable stunnel (default: disabled)
+  --enable-md4            Enable MD4 (default: disabled)
+  --enable-enckeys        Enable PEM encrypted private key support (default:
+                          disabled)
+  --enable-pwdbased       Enable PWDBASED (default: disabled)
+  --enable-scrypt         Enable SCRYPT (default: disabled)
+  --enable-cryptonly      Enable wolfCrypt Only build (default: disabled)
+  --enable-fastmath       Enable fast math ops (default: enabled on
+                          x86_64/aarch64)
+  --enable-fasthugemath   Enable fast math + huge code (default: disabled)
+  --enable-examples       Enable Examples (default: enabled)
+  --enable-crypttests     Enable Crypt Bench/Test (default: enabled)
+  --enable-pkcs11         Enable pkcs11 access (default: disabled)
+  --enable-pkcs12         Enable pkcs12 (default: enabled)
+  --enable-sp             Enable Single Precision maths implementation
+                          (default: disabled)
+  --enable-sp-asm         Enable Single Precision assembly implementation
+                          (default: disabled)
+  --enable-sp-math        Enable Single Precision math implementation only
+                          (default: disabled)
+  --enable-fast-rsa       Enable RSA using Intel IPP (default: disabled)
+  --enable-staticmemory   Enable static memory use (default: disabled)
+  --enable-mcapi          Enable Microchip API (default: disabled)
+  --enable-asynccrypt     Enable Asynchronous Crypto (default: disabled)
+  --enable-asyncthreads   Enable Asynchronous Threading (default: enabled)
+  --enable-cryptodev      DEPRECATED, use cryptocb instead
+  --enable-cryptocb       Enable crypto callbacks (default: disabled)
+  --enable-sessionexport  Enable export and import of sessions (default:
+                          disabled)
+  --enable-aeskeywrap     Enable AES key wrap support (default: disabled)
+  --enable-oldnames       Keep backwards compat with old names (default:
+                          enabled)
+  --enable-memtest        Memory testing option, for internal use (default:
+                          disabled)
+  --enable-hashflags      Enable support for hash flags (default: disabled)
+  --enable-dhdefaultparams
+                          Enables option for default dh parameters (default:
+                          disabled)
+  --enable-usersettings   Use your own user_settings.h and do not add Makefile
+                          CFLAGS (default: disabled)
+  --enable-optflags       Enable default optimization CFLAGS for the compiler
+                          (default: enabled)
+  --enable-jobserver[=no/yes/#] default=yes
+                        Enable up to # make jobs
+                        yes: enable one more than CPU count

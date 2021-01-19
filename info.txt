@@ -1,0 +1,128 @@
+sudo apt-get install libssl-dev
+ctrl+shift+p -> cpp config -> compilier -> /usr/bin/g++
+
+????
+g++ -pthread 
+
+//move wsl
+wsl --list --all
+wsl --export Ubuntu I:\WSL\ubuntu.tar
+wsl --import UbuntuSep I:\WSL\Ubuntu I:\WSL\ubuntu.tar
+wsl --unregister Ubuntu
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//can't run ->
+chmod +x script-name-here.sh
+https://askubuntu.com/questions/1072683/how-can-i-install-protoc-on-ubuntu-16-04
+
+protobuf:
+./configure --prefix=/usr
+make 
+make check
+sudo make install
+sudo ldconfig
+
+https://www.openssl.org/docs/manmaster/man7/Ed25519.html
+
+https://www.wolfssl.com/doxygen/group__Curve25519.html#gabc36077c36bbeca9d24e840cc31e19e3
+
+https://tls.ulfheim.net/
+
+https://tls13.ulfheim.net/
+
+own secured allocator
+on dealloc write all zeroes, then random bytes
+
+gzip 
+
+#include  "cinttypes"
+
+/////
+wolfssl
+./configure --enable-curve25519 --enable-ed25519 --disable-oldtls --disable-tlsv12 --disable-md5 --disable-sha --enable-sha3
+
+/usr/local/include/wolfssl/wolfcrypt/settings.h:2138:14: warning: #warning "For timing resistance / side-channel attack prevention consider using harden options" [-Wcpp]
+
+https://www.wolfssl.com/forums/topic832-how-to-build-individual-algorithms.html
+
+//check ownership before configure
+
+./configure  --enable-cryptonly --enable-static\
+    --disable-oldtls --disable-tlsv12 --disable-tls13 \
+    --disable-ecc \
+    --enable-curve25519 --enable-ed25519 \
+    --enable-curve448 --enable-ed448 \
+    --enable-hkdf --disable-dh --enable-rsa \
+    --enable-aes --enable-aesgcm --enable-aesctr --disable-aescbc --disable-des3 \
+    --disable-sha --enable-sha512 --disable-md5 --enable-sha3 \
+    --disable-chacha --disable-poly1305 \
+    --enable-fastmath --disable-memory \
+    --prefix=/usr
+
+//--enable-aesctr for unlocking direct aes functions
+//cut:  --enable-compkey --disable-rsa --disable-aescbc
+//leave rsa for benchmarking rsa vs Ed25519
+//DH Default Parameters:      yes ???
+
+options.h WOLFCRYPT_ONLY
+settings.h 
+#define WOLFSSL_USER_SETTINGS
+
+user_settings.h
+
+!!!!!!!!!!!!!!!!!!!!!!!
+./configure generates wolfssl/options.h which must be included before any wolfssl headers
+
+TLS1.3
+https://tools.ietf.org/html/rfc8446
+
+//hkdf needed to get a uniformly distributed key
+//significant contribution of using a salt value
+//use of info
+https://tools.ietf.org/html/rfc5869
+
+//hmac
+https://tools.ietf.org/html/rfc2104
+
+//missing rng error is caused in 3847 of ecc.c
+//ECC_TIMING_RESISTANT
+
+https://crypto.stackexchange.com/questions/44337/security-of-elliptic-curves
+
+Curve25519 (128 sec -> 256 key)
+
+//elliptic curves
+https://tools.ietf.org/html/rfc7748
+
+https://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/
+https://www.desmos.com/calculator/ialhd71we3
+https://en.wikipedia.org/wiki/Elliptic_curve
+https://www.allaboutcircuits.com/technical-articles/elliptic-curve-cryptography-in-embedded-systems/#:~:text=Elliptic%20Curve%20Addition%20Operations,becomes%20the%20point%20(R).
+
+https://medium.com/asecuritysite-when-bob-met-alice/youve-heard-of-x25519-but-what-s-so-special-about-x448-c790ef57ceb1
+
+https://bitcoinpq.org/download/bitcoinpq-whitepaper-russian.pdf
+
+https://en.wikipedia.org/wiki/Post-Quantum_Cryptography_Standardization
+
+https://cryptoservices.github.io/quantum/2015/12/08/XMSS-and-SPHINCS.html
+
+//TCP
+http://users.pja.edu.pl/~jms/qnx/help/tcpip_4.25_en/prog_guide/sock_advanced_tut.html
+
+//ed curves
+https://tools.ietf.org/html/rfc8032#page-43
+
+https://goteleport.com/blog/comparing-ssh-keys/
+
+https://ed25519.cr.yp.to/
+https://ed25519.cr.yp.to/eddsa-20150704.pdf
+
+ecdsa eddsa tests
+https://www.wolfssl.com/ed25519-support-coming-to-wolfcrypt/
+
+saber implementation:
+https://github.com/KULeuven-COSIC/SABER/blob/master/Reference_Implementation_KEM
+
+saber docs
+https://www.esat.kuleuven.be/cosic/publications/article-2953.pdf
