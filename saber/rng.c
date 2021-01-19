@@ -131,11 +131,11 @@ void AES256_ECB(unsigned char *key, unsigned char *ctr, unsigned char *buffer)
 
     wc_AesEncryptDirect(&aes, buffer, ctr);
 
-    print_bytes(key, 32);
+    //print_bytes(key, 32);
 
     wc_AesFree(&aes);
 
-    print_bytes(key, 32);
+    //print_bytes(key, 32);
 
     //
 

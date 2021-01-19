@@ -130,3 +130,7 @@ https://www.esat.kuleuven.be/cosic/publications/article-2953.pdf
 
 generate xmss keys for openssh
 https://wiki.gentoo.org/wiki/SSH
+
+change default wsl user
+https://github.com/microsoft/WSL/issues/4276#issuecomment-509364493
+(uid is decimal not hex !!!)
