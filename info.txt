@@ -126,3 +126,7 @@ https://github.com/KULeuven-COSIC/SABER/blob/master/Reference_Implementation_KEM
 
 saber docs
 https://www.esat.kuleuven.be/cosic/publications/article-2953.pdf
+
+
+generate xmss keys for openssh
+https://wiki.gentoo.org/wiki/SSH
