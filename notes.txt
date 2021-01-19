@@ -3,10 +3,13 @@ https://wiki.openssl.org/index.php/Simple_TLS_Server
 
 4 bytes packet length -> alloc buf
 
-benchmark ecdsa vs rsa 100,000 samples
+benchmark ed25519 vs rsa 100,000 samples
 keygen, siggen and sigver
 
 aes256 only, cuz 2 ^ n/2 for quantum
 https://en.wikipedia.org/wiki/Key_size
 
 blake3 hashing
+
+[optional]
+Hash chain style hybrid signatures for verifying messages chain
