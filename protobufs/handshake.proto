@@ -4,7 +4,7 @@ option optimize_for = LITE_RUNTIME;
 
 package neptune.packets;
 
-enum E_DS {    
+enum eDS {    
     _INVALID_DS_        = 0;
 
     ED25519             = 1;
@@ -18,8 +18,8 @@ enum E_DS {
     FALCON_1024         = 7;
 }
 
-enum E_DS_HASH {
-    _INVALID_DS_HASH_ = 0;
+enum eHashing {
+    _INVALID_H_       = 0;
 
     SHA2_256          = 1;
 
@@ -28,17 +28,17 @@ enum E_DS_HASH {
     BLAKE3_256        = 7;
 }
 
-message DS_PublicKey {    
-    E_DS type = 1;
+message DSPublicKey {    
+    eDS type = 1;
     bytes key = 2;
 }
 
-message DS_Result {
-    E_DS type = 1;
+message DSResult {
+    eDS type = 1;
     bytes result = 2;
 }
 
-enum E_KEM {
+enum eKEM {
     _INVALID_KEM_  = 0;
 
     X25519         = 1;
@@ -47,31 +47,26 @@ enum E_KEM {
     KYBER_512      = 3;
     KYBER_768      = 4;
     KYBER_1024     = 5;
-     
-    KYBER_512_90s  = 6;
-    KYBER_768_90s  = 7;
-    KYBER_1024_90s = 8;
     
-    LightSABER     = 9;
-    SABER          = 10;
-    FireSABER      = 11;
+    LightSABER     = 6;
+    SABER          = 7;
+    FireSABER      = 8;
 
-    NTRU           = 12;
+    NTRU           = 9;
 }
 
-message KEM_PublicKey {    
-    E_KEM type = 1;    
+message KEMPublicKey {    
+    eKEM type = 1;    
     bytes key = 2;
 }
-
 
 message Handshake {
     uint32 version = 1;
     
-    repeated KEM_PublicKey kem_keys = 2;
-    repeated DS_PublicKey ds_keys = 3;
+    repeated KEMPublicKey kem_keys = 2;
+    repeated DSPublicKey ds_keys = 3;
     
-    repeated DS_Result ds_results = 4;
+    repeated DSResult ds_results = 4;
     
     bytes salt = 5;
 }

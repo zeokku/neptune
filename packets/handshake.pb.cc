@@ -11,54 +11,54 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_handshake_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DS_PublicKey_handshake_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_handshake_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DS_Result_handshake_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_handshake_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KEM_PublicKey_handshake_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_handshake_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DSPublicKey_handshake_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_handshake_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DSResult_handshake_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_handshake_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KEMPublicKey_handshake_2eproto;
 namespace neptune {
 namespace packets {
-class DS_PublicKeyDefaultTypeInternal {
+class DSPublicKeyDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DS_PublicKey> _instance;
-} _DS_PublicKey_default_instance_;
-class DS_ResultDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DSPublicKey> _instance;
+} _DSPublicKey_default_instance_;
+class DSResultDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DS_Result> _instance;
-} _DS_Result_default_instance_;
-class KEM_PublicKeyDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DSResult> _instance;
+} _DSResult_default_instance_;
+class KEMPublicKeyDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<KEM_PublicKey> _instance;
-} _KEM_PublicKey_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<KEMPublicKey> _instance;
+} _KEMPublicKey_default_instance_;
 class HandshakeDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Handshake> _instance;
 } _Handshake_default_instance_;
 }  // namespace packets
 }  // namespace neptune
-static void InitDefaultsscc_info_DS_PublicKey_handshake_2eproto() {
+static void InitDefaultsscc_info_DSPublicKey_handshake_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::neptune::packets::_DS_PublicKey_default_instance_;
-    new (ptr) ::neptune::packets::DS_PublicKey();
+    void* ptr = &::neptune::packets::_DSPublicKey_default_instance_;
+    new (ptr) ::neptune::packets::DSPublicKey();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DS_PublicKey_handshake_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DS_PublicKey_handshake_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DSPublicKey_handshake_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DSPublicKey_handshake_2eproto}, {}};
 
-static void InitDefaultsscc_info_DS_Result_handshake_2eproto() {
+static void InitDefaultsscc_info_DSResult_handshake_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::neptune::packets::_DS_Result_default_instance_;
-    new (ptr) ::neptune::packets::DS_Result();
+    void* ptr = &::neptune::packets::_DSResult_default_instance_;
+    new (ptr) ::neptune::packets::DSResult();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DS_Result_handshake_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DS_Result_handshake_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DSResult_handshake_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DSResult_handshake_2eproto}, {}};
 
 static void InitDefaultsscc_info_Handshake_handshake_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -72,26 +72,26 @@ static void InitDefaultsscc_info_Handshake_handshake_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_Handshake_handshake_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_Handshake_handshake_2eproto}, {
-      &scc_info_KEM_PublicKey_handshake_2eproto.base,
-      &scc_info_DS_PublicKey_handshake_2eproto.base,
-      &scc_info_DS_Result_handshake_2eproto.base,}};
+      &scc_info_KEMPublicKey_handshake_2eproto.base,
+      &scc_info_DSPublicKey_handshake_2eproto.base,
+      &scc_info_DSResult_handshake_2eproto.base,}};
 
-static void InitDefaultsscc_info_KEM_PublicKey_handshake_2eproto() {
+static void InitDefaultsscc_info_KEMPublicKey_handshake_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::neptune::packets::_KEM_PublicKey_default_instance_;
-    new (ptr) ::neptune::packets::KEM_PublicKey();
+    void* ptr = &::neptune::packets::_KEMPublicKey_default_instance_;
+    new (ptr) ::neptune::packets::KEMPublicKey();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KEM_PublicKey_handshake_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_KEM_PublicKey_handshake_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KEMPublicKey_handshake_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_KEMPublicKey_handshake_2eproto}, {}};
 
 namespace neptune {
 namespace packets {
-bool E_DS_IsValid(int value) {
+bool eDS_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -107,9 +107,9 @@ bool E_DS_IsValid(int value) {
   }
 }
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> E_DS_strings[8] = {};
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> eDS_strings[8] = {};
 
-static const char E_DS_names[] =
+static const char eDS_names[] =
   "DILITHIUM_1024x768"
   "DILITHIUM_1280x1024"
   "DILITHIUM_1536x1280"
@@ -119,18 +119,18 @@ static const char E_DS_names[] =
   "FALCON_512"
   "_INVALID_DS_";
 
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry E_DS_entries[] = {
-  { {E_DS_names + 0, 18}, 3 },
-  { {E_DS_names + 18, 19}, 4 },
-  { {E_DS_names + 37, 19}, 5 },
-  { {E_DS_names + 56, 7}, 1 },
-  { {E_DS_names + 63, 5}, 2 },
-  { {E_DS_names + 68, 11}, 7 },
-  { {E_DS_names + 79, 10}, 6 },
-  { {E_DS_names + 89, 12}, 0 },
+static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry eDS_entries[] = {
+  { {eDS_names + 0, 18}, 3 },
+  { {eDS_names + 18, 19}, 4 },
+  { {eDS_names + 37, 19}, 5 },
+  { {eDS_names + 56, 7}, 1 },
+  { {eDS_names + 63, 5}, 2 },
+  { {eDS_names + 68, 11}, 7 },
+  { {eDS_names + 79, 10}, 6 },
+  { {eDS_names + 89, 12}, 0 },
 };
 
-static const int E_DS_entries_by_number[] = {
+static const int eDS_entries_by_number[] = {
   7, // 0 -> _INVALID_DS_
   3, // 1 -> ED25519
   4, // 2 -> ED448
@@ -141,32 +141,32 @@ static const int E_DS_entries_by_number[] = {
   5, // 7 -> FALCON_1024
 };
 
-const std::string& E_DS_Name(
-    E_DS value) {
+const std::string& eDS_Name(
+    eDS value) {
   static const bool dummy =
       ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          E_DS_entries,
-          E_DS_entries_by_number,
-          8, E_DS_strings);
+          eDS_entries,
+          eDS_entries_by_number,
+          8, eDS_strings);
   (void) dummy;
   int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      E_DS_entries,
-      E_DS_entries_by_number,
+      eDS_entries,
+      eDS_entries_by_number,
       8, value);
   return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     E_DS_strings[idx].get();
+                     eDS_strings[idx].get();
 }
-bool E_DS_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, E_DS* value) {
+bool eDS_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, eDS* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
-      E_DS_entries, 8, name, &int_value);
+      eDS_entries, 8, name, &int_value);
   if (success) {
-    *value = static_cast<E_DS>(int_value);
+    *value = static_cast<eDS>(int_value);
   }
   return success;
 }
-bool E_DS_HASH_IsValid(int value) {
+bool eHashing_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -178,54 +178,54 @@ bool E_DS_HASH_IsValid(int value) {
   }
 }
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> E_DS_HASH_strings[4] = {};
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> eHashing_strings[4] = {};
 
-static const char E_DS_HASH_names[] =
+static const char eHashing_names[] =
   "BLAKE3_256"
   "SHA2_256"
   "SHA3_256"
-  "_INVALID_DS_HASH_";
+  "_INVALID_H_";
 
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry E_DS_HASH_entries[] = {
-  { {E_DS_HASH_names + 0, 10}, 7 },
-  { {E_DS_HASH_names + 10, 8}, 1 },
-  { {E_DS_HASH_names + 18, 8}, 4 },
-  { {E_DS_HASH_names + 26, 17}, 0 },
+static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry eHashing_entries[] = {
+  { {eHashing_names + 0, 10}, 7 },
+  { {eHashing_names + 10, 8}, 1 },
+  { {eHashing_names + 18, 8}, 4 },
+  { {eHashing_names + 26, 11}, 0 },
 };
 
-static const int E_DS_HASH_entries_by_number[] = {
-  3, // 0 -> _INVALID_DS_HASH_
+static const int eHashing_entries_by_number[] = {
+  3, // 0 -> _INVALID_H_
   1, // 1 -> SHA2_256
   2, // 4 -> SHA3_256
   0, // 7 -> BLAKE3_256
 };
 
-const std::string& E_DS_HASH_Name(
-    E_DS_HASH value) {
+const std::string& eHashing_Name(
+    eHashing value) {
   static const bool dummy =
       ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          E_DS_HASH_entries,
-          E_DS_HASH_entries_by_number,
-          4, E_DS_HASH_strings);
+          eHashing_entries,
+          eHashing_entries_by_number,
+          4, eHashing_strings);
   (void) dummy;
   int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      E_DS_HASH_entries,
-      E_DS_HASH_entries_by_number,
+      eHashing_entries,
+      eHashing_entries_by_number,
       4, value);
   return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     E_DS_HASH_strings[idx].get();
+                     eHashing_strings[idx].get();
 }
-bool E_DS_HASH_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, E_DS_HASH* value) {
+bool eHashing_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, eHashing* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
-      E_DS_HASH_entries, 4, name, &int_value);
+      eHashing_entries, 4, name, &int_value);
   if (success) {
-    *value = static_cast<E_DS_HASH>(int_value);
+    *value = static_cast<eHashing>(int_value);
   }
   return success;
 }
-bool E_KEM_IsValid(int value) {
+bool eKEM_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -246,9 +246,9 @@ bool E_KEM_IsValid(int value) {
   }
 }
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> E_KEM_strings[13] = {};
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> eKEM_strings[13] = {};
 
-static const char E_KEM_names[] =
+static const char eKEM_names[] =
   "FireSABER"
   "KYBER_1024"
   "KYBER_1024_90s"
@@ -263,23 +263,23 @@ static const char E_KEM_names[] =
   "X448"
   "_INVALID_KEM_";
 
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry E_KEM_entries[] = {
-  { {E_KEM_names + 0, 9}, 11 },
-  { {E_KEM_names + 9, 10}, 5 },
-  { {E_KEM_names + 19, 14}, 8 },
-  { {E_KEM_names + 33, 9}, 3 },
-  { {E_KEM_names + 42, 13}, 6 },
-  { {E_KEM_names + 55, 9}, 4 },
-  { {E_KEM_names + 64, 13}, 7 },
-  { {E_KEM_names + 77, 10}, 9 },
-  { {E_KEM_names + 87, 4}, 12 },
-  { {E_KEM_names + 91, 5}, 10 },
-  { {E_KEM_names + 96, 6}, 1 },
-  { {E_KEM_names + 102, 4}, 2 },
-  { {E_KEM_names + 106, 13}, 0 },
+static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry eKEM_entries[] = {
+  { {eKEM_names + 0, 9}, 11 },
+  { {eKEM_names + 9, 10}, 5 },
+  { {eKEM_names + 19, 14}, 8 },
+  { {eKEM_names + 33, 9}, 3 },
+  { {eKEM_names + 42, 13}, 6 },
+  { {eKEM_names + 55, 9}, 4 },
+  { {eKEM_names + 64, 13}, 7 },
+  { {eKEM_names + 77, 10}, 9 },
+  { {eKEM_names + 87, 4}, 12 },
+  { {eKEM_names + 91, 5}, 10 },
+  { {eKEM_names + 96, 6}, 1 },
+  { {eKEM_names + 102, 4}, 2 },
+  { {eKEM_names + 106, 13}, 0 },
 };
 
-static const int E_KEM_entries_by_number[] = {
+static const int eKEM_entries_by_number[] = {
   12, // 0 -> _INVALID_KEM_
   10, // 1 -> X25519
   11, // 2 -> X448
@@ -295,45 +295,45 @@ static const int E_KEM_entries_by_number[] = {
   8, // 12 -> NTRU
 };
 
-const std::string& E_KEM_Name(
-    E_KEM value) {
+const std::string& eKEM_Name(
+    eKEM value) {
   static const bool dummy =
       ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          E_KEM_entries,
-          E_KEM_entries_by_number,
-          13, E_KEM_strings);
+          eKEM_entries,
+          eKEM_entries_by_number,
+          13, eKEM_strings);
   (void) dummy;
   int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      E_KEM_entries,
-      E_KEM_entries_by_number,
+      eKEM_entries,
+      eKEM_entries_by_number,
       13, value);
   return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     E_KEM_strings[idx].get();
+                     eKEM_strings[idx].get();
 }
-bool E_KEM_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, E_KEM* value) {
+bool eKEM_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, eKEM* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
-      E_KEM_entries, 13, name, &int_value);
+      eKEM_entries, 13, name, &int_value);
   if (success) {
-    *value = static_cast<E_KEM>(int_value);
+    *value = static_cast<eKEM>(int_value);
   }
   return success;
 }
 
 // ===================================================================
 
-class DS_PublicKey::_Internal {
+class DSPublicKey::_Internal {
  public:
 };
 
-DS_PublicKey::DS_PublicKey(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+DSPublicKey::DSPublicKey(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:neptune.packets.DS_PublicKey)
+  // @@protoc_insertion_point(arena_constructor:neptune.packets.DSPublicKey)
 }
-DS_PublicKey::DS_PublicKey(const DS_PublicKey& from)
+DSPublicKey::DSPublicKey(const DSPublicKey& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -342,43 +342,43 @@ DS_PublicKey::DS_PublicKey(const DS_PublicKey& from)
       GetArena());
   }
   type_ = from.type_;
-  // @@protoc_insertion_point(copy_constructor:neptune.packets.DS_PublicKey)
+  // @@protoc_insertion_point(copy_constructor:neptune.packets.DSPublicKey)
 }
 
-void DS_PublicKey::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DS_PublicKey_handshake_2eproto.base);
+void DSPublicKey::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DSPublicKey_handshake_2eproto.base);
   key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   type_ = 0;
 }
 
-DS_PublicKey::~DS_PublicKey() {
-  // @@protoc_insertion_point(destructor:neptune.packets.DS_PublicKey)
+DSPublicKey::~DSPublicKey() {
+  // @@protoc_insertion_point(destructor:neptune.packets.DSPublicKey)
   SharedDtor();
   _internal_metadata_.Delete<std::string>();
 }
 
-void DS_PublicKey::SharedDtor() {
+void DSPublicKey::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void DS_PublicKey::ArenaDtor(void* object) {
-  DS_PublicKey* _this = reinterpret_cast< DS_PublicKey* >(object);
+void DSPublicKey::ArenaDtor(void* object) {
+  DSPublicKey* _this = reinterpret_cast< DSPublicKey* >(object);
   (void)_this;
 }
-void DS_PublicKey::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void DSPublicKey::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void DS_PublicKey::SetCachedSize(int size) const {
+void DSPublicKey::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const DS_PublicKey& DS_PublicKey::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DS_PublicKey_handshake_2eproto.base);
+const DSPublicKey& DSPublicKey::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DSPublicKey_handshake_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void DS_PublicKey::Clear() {
-// @@protoc_insertion_point(message_clear_start:neptune.packets.DS_PublicKey)
+void DSPublicKey::Clear() {
+// @@protoc_insertion_point(message_clear_start:neptune.packets.DSPublicKey)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -388,19 +388,19 @@ void DS_PublicKey::Clear() {
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* DS_PublicKey::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* DSPublicKey::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .neptune.packets.E_DS type = 1;
+      // .neptune.packets.eDS type = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_type(static_cast<::neptune::packets::E_DS>(val));
+          _internal_set_type(static_cast<::neptune::packets::eDS>(val));
         } else goto handle_unusual;
         continue;
       // bytes key = 2;
@@ -433,13 +433,13 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DS_PublicKey::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* DSPublicKey::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:neptune.packets.DS_PublicKey)
+  // @@protoc_insertion_point(serialize_to_array_start:neptune.packets.DSPublicKey)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .neptune.packets.E_DS type = 1;
+  // .neptune.packets.eDS type = 1;
   if (this->type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -456,12 +456,12 @@ failure:
     target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
         static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:neptune.packets.DS_PublicKey)
+  // @@protoc_insertion_point(serialize_to_array_end:neptune.packets.DSPublicKey)
   return target;
 }
 
-size_t DS_PublicKey::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:neptune.packets.DS_PublicKey)
+size_t DSPublicKey::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:neptune.packets.DSPublicKey)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -475,7 +475,7 @@ size_t DS_PublicKey::ByteSizeLong() const {
         this->_internal_key());
   }
 
-  // .neptune.packets.E_DS type = 1;
+  // .neptune.packets.eDS type = 1;
   if (this->type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
@@ -489,14 +489,14 @@ size_t DS_PublicKey::ByteSizeLong() const {
   return total_size;
 }
 
-void DS_PublicKey::CheckTypeAndMergeFrom(
+void DSPublicKey::CheckTypeAndMergeFrom(
     const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
-  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const DS_PublicKey*>(
+  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const DSPublicKey*>(
       &from));
 }
 
-void DS_PublicKey::MergeFrom(const DS_PublicKey& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:neptune.packets.DS_PublicKey)
+void DSPublicKey::MergeFrom(const DSPublicKey& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:neptune.packets.DSPublicKey)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -510,42 +510,42 @@ void DS_PublicKey::MergeFrom(const DS_PublicKey& from) {
   }
 }
 
-void DS_PublicKey::CopyFrom(const DS_PublicKey& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:neptune.packets.DS_PublicKey)
+void DSPublicKey::CopyFrom(const DSPublicKey& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:neptune.packets.DSPublicKey)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool DS_PublicKey::IsInitialized() const {
+bool DSPublicKey::IsInitialized() const {
   return true;
 }
 
-void DS_PublicKey::InternalSwap(DS_PublicKey* other) {
+void DSPublicKey::InternalSwap(DSPublicKey* other) {
   using std::swap;
   _internal_metadata_.Swap<std::string>(&other->_internal_metadata_);
   key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(type_, other->type_);
 }
 
-std::string DS_PublicKey::GetTypeName() const {
-  return "neptune.packets.DS_PublicKey";
+std::string DSPublicKey::GetTypeName() const {
+  return "neptune.packets.DSPublicKey";
 }
 
 
 // ===================================================================
 
-class DS_Result::_Internal {
+class DSResult::_Internal {
  public:
 };
 
-DS_Result::DS_Result(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+DSResult::DSResult(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:neptune.packets.DS_Result)
+  // @@protoc_insertion_point(arena_constructor:neptune.packets.DSResult)
 }
-DS_Result::DS_Result(const DS_Result& from)
+DSResult::DSResult(const DSResult& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   result_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -554,43 +554,43 @@ DS_Result::DS_Result(const DS_Result& from)
       GetArena());
   }
   type_ = from.type_;
-  // @@protoc_insertion_point(copy_constructor:neptune.packets.DS_Result)
+  // @@protoc_insertion_point(copy_constructor:neptune.packets.DSResult)
 }
 
-void DS_Result::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DS_Result_handshake_2eproto.base);
+void DSResult::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DSResult_handshake_2eproto.base);
   result_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   type_ = 0;
 }
 
-DS_Result::~DS_Result() {
-  // @@protoc_insertion_point(destructor:neptune.packets.DS_Result)
+DSResult::~DSResult() {
+  // @@protoc_insertion_point(destructor:neptune.packets.DSResult)
   SharedDtor();
   _internal_metadata_.Delete<std::string>();
 }
 
-void DS_Result::SharedDtor() {
+void DSResult::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   result_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void DS_Result::ArenaDtor(void* object) {
-  DS_Result* _this = reinterpret_cast< DS_Result* >(object);
+void DSResult::ArenaDtor(void* object) {
+  DSResult* _this = reinterpret_cast< DSResult* >(object);
   (void)_this;
 }
-void DS_Result::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void DSResult::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void DS_Result::SetCachedSize(int size) const {
+void DSResult::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const DS_Result& DS_Result::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DS_Result_handshake_2eproto.base);
+const DSResult& DSResult::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DSResult_handshake_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void DS_Result::Clear() {
-// @@protoc_insertion_point(message_clear_start:neptune.packets.DS_Result)
+void DSResult::Clear() {
+// @@protoc_insertion_point(message_clear_start:neptune.packets.DSResult)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -600,19 +600,19 @@ void DS_Result::Clear() {
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* DS_Result::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* DSResult::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .neptune.packets.E_DS type = 1;
+      // .neptune.packets.eDS type = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_type(static_cast<::neptune::packets::E_DS>(val));
+          _internal_set_type(static_cast<::neptune::packets::eDS>(val));
         } else goto handle_unusual;
         continue;
       // bytes result = 2;
@@ -645,13 +645,13 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DS_Result::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* DSResult::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:neptune.packets.DS_Result)
+  // @@protoc_insertion_point(serialize_to_array_start:neptune.packets.DSResult)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .neptune.packets.E_DS type = 1;
+  // .neptune.packets.eDS type = 1;
   if (this->type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -668,12 +668,12 @@ failure:
     target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
         static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:neptune.packets.DS_Result)
+  // @@protoc_insertion_point(serialize_to_array_end:neptune.packets.DSResult)
   return target;
 }
 
-size_t DS_Result::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:neptune.packets.DS_Result)
+size_t DSResult::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:neptune.packets.DSResult)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -687,7 +687,7 @@ size_t DS_Result::ByteSizeLong() const {
         this->_internal_result());
   }
 
-  // .neptune.packets.E_DS type = 1;
+  // .neptune.packets.eDS type = 1;
   if (this->type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
@@ -701,14 +701,14 @@ size_t DS_Result::ByteSizeLong() const {
   return total_size;
 }
 
-void DS_Result::CheckTypeAndMergeFrom(
+void DSResult::CheckTypeAndMergeFrom(
     const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
-  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const DS_Result*>(
+  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const DSResult*>(
       &from));
 }
 
-void DS_Result::MergeFrom(const DS_Result& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:neptune.packets.DS_Result)
+void DSResult::MergeFrom(const DSResult& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:neptune.packets.DSResult)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -722,42 +722,42 @@ void DS_Result::MergeFrom(const DS_Result& from) {
   }
 }
 
-void DS_Result::CopyFrom(const DS_Result& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:neptune.packets.DS_Result)
+void DSResult::CopyFrom(const DSResult& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:neptune.packets.DSResult)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool DS_Result::IsInitialized() const {
+bool DSResult::IsInitialized() const {
   return true;
 }
 
-void DS_Result::InternalSwap(DS_Result* other) {
+void DSResult::InternalSwap(DSResult* other) {
   using std::swap;
   _internal_metadata_.Swap<std::string>(&other->_internal_metadata_);
   result_.Swap(&other->result_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(type_, other->type_);
 }
 
-std::string DS_Result::GetTypeName() const {
-  return "neptune.packets.DS_Result";
+std::string DSResult::GetTypeName() const {
+  return "neptune.packets.DSResult";
 }
 
 
 // ===================================================================
 
-class KEM_PublicKey::_Internal {
+class KEMPublicKey::_Internal {
  public:
 };
 
-KEM_PublicKey::KEM_PublicKey(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+KEMPublicKey::KEMPublicKey(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:neptune.packets.KEM_PublicKey)
+  // @@protoc_insertion_point(arena_constructor:neptune.packets.KEMPublicKey)
 }
-KEM_PublicKey::KEM_PublicKey(const KEM_PublicKey& from)
+KEMPublicKey::KEMPublicKey(const KEMPublicKey& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -766,43 +766,43 @@ KEM_PublicKey::KEM_PublicKey(const KEM_PublicKey& from)
       GetArena());
   }
   type_ = from.type_;
-  // @@protoc_insertion_point(copy_constructor:neptune.packets.KEM_PublicKey)
+  // @@protoc_insertion_point(copy_constructor:neptune.packets.KEMPublicKey)
 }
 
-void KEM_PublicKey::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_KEM_PublicKey_handshake_2eproto.base);
+void KEMPublicKey::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_KEMPublicKey_handshake_2eproto.base);
   key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   type_ = 0;
 }
 
-KEM_PublicKey::~KEM_PublicKey() {
-  // @@protoc_insertion_point(destructor:neptune.packets.KEM_PublicKey)
+KEMPublicKey::~KEMPublicKey() {
+  // @@protoc_insertion_point(destructor:neptune.packets.KEMPublicKey)
   SharedDtor();
   _internal_metadata_.Delete<std::string>();
 }
 
-void KEM_PublicKey::SharedDtor() {
+void KEMPublicKey::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void KEM_PublicKey::ArenaDtor(void* object) {
-  KEM_PublicKey* _this = reinterpret_cast< KEM_PublicKey* >(object);
+void KEMPublicKey::ArenaDtor(void* object) {
+  KEMPublicKey* _this = reinterpret_cast< KEMPublicKey* >(object);
   (void)_this;
 }
-void KEM_PublicKey::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void KEMPublicKey::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void KEM_PublicKey::SetCachedSize(int size) const {
+void KEMPublicKey::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const KEM_PublicKey& KEM_PublicKey::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_KEM_PublicKey_handshake_2eproto.base);
+const KEMPublicKey& KEMPublicKey::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_KEMPublicKey_handshake_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void KEM_PublicKey::Clear() {
-// @@protoc_insertion_point(message_clear_start:neptune.packets.KEM_PublicKey)
+void KEMPublicKey::Clear() {
+// @@protoc_insertion_point(message_clear_start:neptune.packets.KEMPublicKey)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -812,19 +812,19 @@ void KEM_PublicKey::Clear() {
   _internal_metadata_.Clear<std::string>();
 }
 
-const char* KEM_PublicKey::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* KEMPublicKey::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .neptune.packets.E_KEM type = 1;
+      // .neptune.packets.eKEM type = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_type(static_cast<::neptune::packets::E_KEM>(val));
+          _internal_set_type(static_cast<::neptune::packets::eKEM>(val));
         } else goto handle_unusual;
         continue;
       // bytes key = 2;
@@ -857,13 +857,13 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* KEM_PublicKey::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* KEMPublicKey::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:neptune.packets.KEM_PublicKey)
+  // @@protoc_insertion_point(serialize_to_array_start:neptune.packets.KEMPublicKey)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .neptune.packets.E_KEM type = 1;
+  // .neptune.packets.eKEM type = 1;
   if (this->type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -880,12 +880,12 @@ failure:
     target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
         static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:neptune.packets.KEM_PublicKey)
+  // @@protoc_insertion_point(serialize_to_array_end:neptune.packets.KEMPublicKey)
   return target;
 }
 
-size_t KEM_PublicKey::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:neptune.packets.KEM_PublicKey)
+size_t KEMPublicKey::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:neptune.packets.KEMPublicKey)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -899,7 +899,7 @@ size_t KEM_PublicKey::ByteSizeLong() const {
         this->_internal_key());
   }
 
-  // .neptune.packets.E_KEM type = 1;
+  // .neptune.packets.eKEM type = 1;
   if (this->type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
@@ -913,14 +913,14 @@ size_t KEM_PublicKey::ByteSizeLong() const {
   return total_size;
 }
 
-void KEM_PublicKey::CheckTypeAndMergeFrom(
+void KEMPublicKey::CheckTypeAndMergeFrom(
     const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
-  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const KEM_PublicKey*>(
+  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const KEMPublicKey*>(
       &from));
 }
 
-void KEM_PublicKey::MergeFrom(const KEM_PublicKey& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:neptune.packets.KEM_PublicKey)
+void KEMPublicKey::MergeFrom(const KEMPublicKey& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:neptune.packets.KEMPublicKey)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -934,26 +934,26 @@ void KEM_PublicKey::MergeFrom(const KEM_PublicKey& from) {
   }
 }
 
-void KEM_PublicKey::CopyFrom(const KEM_PublicKey& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:neptune.packets.KEM_PublicKey)
+void KEMPublicKey::CopyFrom(const KEMPublicKey& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:neptune.packets.KEMPublicKey)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool KEM_PublicKey::IsInitialized() const {
+bool KEMPublicKey::IsInitialized() const {
   return true;
 }
 
-void KEM_PublicKey::InternalSwap(KEM_PublicKey* other) {
+void KEMPublicKey::InternalSwap(KEMPublicKey* other) {
   using std::swap;
   _internal_metadata_.Swap<std::string>(&other->_internal_metadata_);
   key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(type_, other->type_);
 }
 
-std::string KEM_PublicKey::GetTypeName() const {
-  return "neptune.packets.KEM_PublicKey";
+std::string KEMPublicKey::GetTypeName() const {
+  return "neptune.packets.KEMPublicKey";
 }
 
 
@@ -1047,7 +1047,7 @@ const char* Handshake::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .neptune.packets.KEM_PublicKey kem_keys = 2;
+      // repeated .neptune.packets.KEMPublicKey kem_keys = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
@@ -1059,7 +1059,7 @@ const char* Handshake::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .neptune.packets.DS_PublicKey ds_keys = 3;
+      // repeated .neptune.packets.DSPublicKey ds_keys = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr -= 1;
@@ -1071,7 +1071,7 @@ const char* Handshake::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .neptune.packets.DS_Result ds_results = 4;
+      // repeated .neptune.packets.DSResult ds_results = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr -= 1;
@@ -1125,7 +1125,7 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_version(), target);
   }
 
-  // repeated .neptune.packets.KEM_PublicKey kem_keys = 2;
+  // repeated .neptune.packets.KEMPublicKey kem_keys = 2;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_kem_keys_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -1133,7 +1133,7 @@ failure:
       InternalWriteMessage(2, this->_internal_kem_keys(i), target, stream);
   }
 
-  // repeated .neptune.packets.DS_PublicKey ds_keys = 3;
+  // repeated .neptune.packets.DSPublicKey ds_keys = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_ds_keys_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -1141,7 +1141,7 @@ failure:
       InternalWriteMessage(3, this->_internal_ds_keys(i), target, stream);
   }
 
-  // repeated .neptune.packets.DS_Result ds_results = 4;
+  // repeated .neptune.packets.DSResult ds_results = 4;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_ds_results_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -1171,21 +1171,21 @@ size_t Handshake::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .neptune.packets.KEM_PublicKey kem_keys = 2;
+  // repeated .neptune.packets.KEMPublicKey kem_keys = 2;
   total_size += 1UL * this->_internal_kem_keys_size();
   for (const auto& msg : this->kem_keys_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .neptune.packets.DS_PublicKey ds_keys = 3;
+  // repeated .neptune.packets.DSPublicKey ds_keys = 3;
   total_size += 1UL * this->_internal_ds_keys_size();
   for (const auto& msg : this->ds_keys_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .neptune.packets.DS_Result ds_results = 4;
+  // repeated .neptune.packets.DSResult ds_results = 4;
   total_size += 1UL * this->_internal_ds_results_size();
   for (const auto& msg : this->ds_results_) {
     total_size +=
@@ -1268,14 +1268,14 @@ std::string Handshake::GetTypeName() const {
 }  // namespace packets
 }  // namespace neptune
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::neptune::packets::DS_PublicKey* Arena::CreateMaybeMessage< ::neptune::packets::DS_PublicKey >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::neptune::packets::DS_PublicKey >(arena);
+template<> PROTOBUF_NOINLINE ::neptune::packets::DSPublicKey* Arena::CreateMaybeMessage< ::neptune::packets::DSPublicKey >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::neptune::packets::DSPublicKey >(arena);
 }
-template<> PROTOBUF_NOINLINE ::neptune::packets::DS_Result* Arena::CreateMaybeMessage< ::neptune::packets::DS_Result >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::neptune::packets::DS_Result >(arena);
+template<> PROTOBUF_NOINLINE ::neptune::packets::DSResult* Arena::CreateMaybeMessage< ::neptune::packets::DSResult >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::neptune::packets::DSResult >(arena);
 }
-template<> PROTOBUF_NOINLINE ::neptune::packets::KEM_PublicKey* Arena::CreateMaybeMessage< ::neptune::packets::KEM_PublicKey >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::neptune::packets::KEM_PublicKey >(arena);
+template<> PROTOBUF_NOINLINE ::neptune::packets::KEMPublicKey* Arena::CreateMaybeMessage< ::neptune::packets::KEMPublicKey >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::neptune::packets::KEMPublicKey >(arena);
 }
 template<> PROTOBUF_NOINLINE ::neptune::packets::Handshake* Arena::CreateMaybeMessage< ::neptune::packets::Handshake >(Arena* arena) {
   return Arena::CreateMessageInternal< ::neptune::packets::Handshake >(arena);

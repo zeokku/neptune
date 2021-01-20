@@ -53,30 +53,30 @@ struct TableStruct_handshake_2eproto {
 };
 namespace neptune {
 namespace packets {
-class DS_PublicKey;
-class DS_PublicKeyDefaultTypeInternal;
-extern DS_PublicKeyDefaultTypeInternal _DS_PublicKey_default_instance_;
-class DS_Result;
-class DS_ResultDefaultTypeInternal;
-extern DS_ResultDefaultTypeInternal _DS_Result_default_instance_;
+class DSPublicKey;
+class DSPublicKeyDefaultTypeInternal;
+extern DSPublicKeyDefaultTypeInternal _DSPublicKey_default_instance_;
+class DSResult;
+class DSResultDefaultTypeInternal;
+extern DSResultDefaultTypeInternal _DSResult_default_instance_;
 class Handshake;
 class HandshakeDefaultTypeInternal;
 extern HandshakeDefaultTypeInternal _Handshake_default_instance_;
-class KEM_PublicKey;
-class KEM_PublicKeyDefaultTypeInternal;
-extern KEM_PublicKeyDefaultTypeInternal _KEM_PublicKey_default_instance_;
+class KEMPublicKey;
+class KEMPublicKeyDefaultTypeInternal;
+extern KEMPublicKeyDefaultTypeInternal _KEMPublicKey_default_instance_;
 }  // namespace packets
 }  // namespace neptune
 PROTOBUF_NAMESPACE_OPEN
-template<> ::neptune::packets::DS_PublicKey* Arena::CreateMaybeMessage<::neptune::packets::DS_PublicKey>(Arena*);
-template<> ::neptune::packets::DS_Result* Arena::CreateMaybeMessage<::neptune::packets::DS_Result>(Arena*);
+template<> ::neptune::packets::DSPublicKey* Arena::CreateMaybeMessage<::neptune::packets::DSPublicKey>(Arena*);
+template<> ::neptune::packets::DSResult* Arena::CreateMaybeMessage<::neptune::packets::DSResult>(Arena*);
 template<> ::neptune::packets::Handshake* Arena::CreateMaybeMessage<::neptune::packets::Handshake>(Arena*);
-template<> ::neptune::packets::KEM_PublicKey* Arena::CreateMaybeMessage<::neptune::packets::KEM_PublicKey>(Arena*);
+template<> ::neptune::packets::KEMPublicKey* Arena::CreateMaybeMessage<::neptune::packets::KEMPublicKey>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace neptune {
 namespace packets {
 
-enum E_DS : int {
+enum eDS : int {
   _INVALID_DS_ = 0,
   ED25519 = 1,
   ED448 = 2,
@@ -85,48 +85,48 @@ enum E_DS : int {
   DILITHIUM_1536x1280 = 5,
   FALCON_512 = 6,
   FALCON_1024 = 7,
-  E_DS_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  E_DS_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+  eDS_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  eDS_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
-bool E_DS_IsValid(int value);
-constexpr E_DS E_DS_MIN = _INVALID_DS_;
-constexpr E_DS E_DS_MAX = FALCON_1024;
-constexpr int E_DS_ARRAYSIZE = E_DS_MAX + 1;
+bool eDS_IsValid(int value);
+constexpr eDS eDS_MIN = _INVALID_DS_;
+constexpr eDS eDS_MAX = FALCON_1024;
+constexpr int eDS_ARRAYSIZE = eDS_MAX + 1;
 
-const std::string& E_DS_Name(E_DS value);
+const std::string& eDS_Name(eDS value);
 template<typename T>
-inline const std::string& E_DS_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, E_DS>::value ||
+inline const std::string& eDS_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, eDS>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function E_DS_Name.");
-  return E_DS_Name(static_cast<E_DS>(enum_t_value));
+    "Incorrect type passed to function eDS_Name.");
+  return eDS_Name(static_cast<eDS>(enum_t_value));
 }
-bool E_DS_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, E_DS* value);
-enum E_DS_HASH : int {
-  _INVALID_DS_HASH_ = 0,
+bool eDS_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, eDS* value);
+enum eHashing : int {
+  _INVALID_H_ = 0,
   SHA2_256 = 1,
   SHA3_256 = 4,
   BLAKE3_256 = 7,
-  E_DS_HASH_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  E_DS_HASH_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+  eHashing_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  eHashing_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
-bool E_DS_HASH_IsValid(int value);
-constexpr E_DS_HASH E_DS_HASH_MIN = _INVALID_DS_HASH_;
-constexpr E_DS_HASH E_DS_HASH_MAX = BLAKE3_256;
-constexpr int E_DS_HASH_ARRAYSIZE = E_DS_HASH_MAX + 1;
+bool eHashing_IsValid(int value);
+constexpr eHashing eHashing_MIN = _INVALID_H_;
+constexpr eHashing eHashing_MAX = BLAKE3_256;
+constexpr int eHashing_ARRAYSIZE = eHashing_MAX + 1;
 
-const std::string& E_DS_HASH_Name(E_DS_HASH value);
+const std::string& eHashing_Name(eHashing value);
 template<typename T>
-inline const std::string& E_DS_HASH_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, E_DS_HASH>::value ||
+inline const std::string& eHashing_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, eHashing>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function E_DS_HASH_Name.");
-  return E_DS_HASH_Name(static_cast<E_DS_HASH>(enum_t_value));
+    "Incorrect type passed to function eHashing_Name.");
+  return eHashing_Name(static_cast<eHashing>(enum_t_value));
 }
-bool E_DS_HASH_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, E_DS_HASH* value);
-enum E_KEM : int {
+bool eHashing_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, eHashing* value);
+enum eKEM : int {
   _INVALID_KEM_ = 0,
   X25519 = 1,
   X448 = 2,
@@ -140,43 +140,43 @@ enum E_KEM : int {
   SABER = 10,
   FireSABER = 11,
   NTRU = 12,
-  E_KEM_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  E_KEM_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+  eKEM_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  eKEM_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
-bool E_KEM_IsValid(int value);
-constexpr E_KEM E_KEM_MIN = _INVALID_KEM_;
-constexpr E_KEM E_KEM_MAX = NTRU;
-constexpr int E_KEM_ARRAYSIZE = E_KEM_MAX + 1;
+bool eKEM_IsValid(int value);
+constexpr eKEM eKEM_MIN = _INVALID_KEM_;
+constexpr eKEM eKEM_MAX = NTRU;
+constexpr int eKEM_ARRAYSIZE = eKEM_MAX + 1;
 
-const std::string& E_KEM_Name(E_KEM value);
+const std::string& eKEM_Name(eKEM value);
 template<typename T>
-inline const std::string& E_KEM_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, E_KEM>::value ||
+inline const std::string& eKEM_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, eKEM>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function E_KEM_Name.");
-  return E_KEM_Name(static_cast<E_KEM>(enum_t_value));
+    "Incorrect type passed to function eKEM_Name.");
+  return eKEM_Name(static_cast<eKEM>(enum_t_value));
 }
-bool E_KEM_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, E_KEM* value);
+bool eKEM_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, eKEM* value);
 // ===================================================================
 
-class DS_PublicKey PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:neptune.packets.DS_PublicKey) */ {
+class DSPublicKey PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:neptune.packets.DSPublicKey) */ {
  public:
-  inline DS_PublicKey() : DS_PublicKey(nullptr) {}
-  virtual ~DS_PublicKey();
+  inline DSPublicKey() : DSPublicKey(nullptr) {}
+  virtual ~DSPublicKey();
 
-  DS_PublicKey(const DS_PublicKey& from);
-  DS_PublicKey(DS_PublicKey&& from) noexcept
-    : DS_PublicKey() {
+  DSPublicKey(const DSPublicKey& from);
+  DSPublicKey(DSPublicKey&& from) noexcept
+    : DSPublicKey() {
     *this = ::std::move(from);
   }
 
-  inline DS_PublicKey& operator=(const DS_PublicKey& from) {
+  inline DSPublicKey& operator=(const DSPublicKey& from) {
     CopyFrom(from);
     return *this;
   }
-  inline DS_PublicKey& operator=(DS_PublicKey&& from) noexcept {
+  inline DSPublicKey& operator=(DSPublicKey&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -185,19 +185,19 @@ class DS_PublicKey PROTOBUF_FINAL :
     return *this;
   }
 
-  static const DS_PublicKey& default_instance();
+  static const DSPublicKey& default_instance();
 
-  static inline const DS_PublicKey* internal_default_instance() {
-    return reinterpret_cast<const DS_PublicKey*>(
-               &_DS_PublicKey_default_instance_);
+  static inline const DSPublicKey* internal_default_instance() {
+    return reinterpret_cast<const DSPublicKey*>(
+               &_DSPublicKey_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(DS_PublicKey& a, DS_PublicKey& b) {
+  friend void swap(DSPublicKey& a, DSPublicKey& b) {
     a.Swap(&b);
   }
-  inline void Swap(DS_PublicKey* other) {
+  inline void Swap(DSPublicKey* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -205,7 +205,7 @@ class DS_PublicKey PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(DS_PublicKey* other) {
+  void UnsafeArenaSwap(DSPublicKey* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -213,17 +213,17 @@ class DS_PublicKey PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline DS_PublicKey* New() const final {
-    return CreateMaybeMessage<DS_PublicKey>(nullptr);
+  inline DSPublicKey* New() const final {
+    return CreateMaybeMessage<DSPublicKey>(nullptr);
   }
 
-  DS_PublicKey* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<DS_PublicKey>(arena);
+  DSPublicKey* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DSPublicKey>(arena);
   }
   void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)
     final;
-  void CopyFrom(const DS_PublicKey& from);
-  void MergeFrom(const DS_PublicKey& from);
+  void CopyFrom(const DSPublicKey& from);
+  void MergeFrom(const DSPublicKey& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -238,13 +238,13 @@ class DS_PublicKey PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const;
-  void InternalSwap(DS_PublicKey* other);
+  void InternalSwap(DSPublicKey* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "neptune.packets.DS_PublicKey";
+    return "neptune.packets.DSPublicKey";
   }
   protected:
-  explicit DS_PublicKey(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit DSPublicKey(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -276,16 +276,16 @@ class DS_PublicKey PROTOBUF_FINAL :
   std::string* _internal_mutable_key();
   public:
 
-  // .neptune.packets.E_DS type = 1;
+  // .neptune.packets.eDS type = 1;
   void clear_type();
-  ::neptune::packets::E_DS type() const;
-  void set_type(::neptune::packets::E_DS value);
+  ::neptune::packets::eDS type() const;
+  void set_type(::neptune::packets::eDS value);
   private:
-  ::neptune::packets::E_DS _internal_type() const;
-  void _internal_set_type(::neptune::packets::E_DS value);
+  ::neptune::packets::eDS _internal_type() const;
+  void _internal_set_type(::neptune::packets::eDS value);
   public:
 
-  // @@protoc_insertion_point(class_scope:neptune.packets.DS_PublicKey)
+  // @@protoc_insertion_point(class_scope:neptune.packets.DSPublicKey)
  private:
   class _Internal;
 
@@ -299,23 +299,23 @@ class DS_PublicKey PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class DS_Result PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:neptune.packets.DS_Result) */ {
+class DSResult PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:neptune.packets.DSResult) */ {
  public:
-  inline DS_Result() : DS_Result(nullptr) {}
-  virtual ~DS_Result();
+  inline DSResult() : DSResult(nullptr) {}
+  virtual ~DSResult();
 
-  DS_Result(const DS_Result& from);
-  DS_Result(DS_Result&& from) noexcept
-    : DS_Result() {
+  DSResult(const DSResult& from);
+  DSResult(DSResult&& from) noexcept
+    : DSResult() {
     *this = ::std::move(from);
   }
 
-  inline DS_Result& operator=(const DS_Result& from) {
+  inline DSResult& operator=(const DSResult& from) {
     CopyFrom(from);
     return *this;
   }
-  inline DS_Result& operator=(DS_Result&& from) noexcept {
+  inline DSResult& operator=(DSResult&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -324,19 +324,19 @@ class DS_Result PROTOBUF_FINAL :
     return *this;
   }
 
-  static const DS_Result& default_instance();
+  static const DSResult& default_instance();
 
-  static inline const DS_Result* internal_default_instance() {
-    return reinterpret_cast<const DS_Result*>(
-               &_DS_Result_default_instance_);
+  static inline const DSResult* internal_default_instance() {
+    return reinterpret_cast<const DSResult*>(
+               &_DSResult_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(DS_Result& a, DS_Result& b) {
+  friend void swap(DSResult& a, DSResult& b) {
     a.Swap(&b);
   }
-  inline void Swap(DS_Result* other) {
+  inline void Swap(DSResult* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -344,7 +344,7 @@ class DS_Result PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(DS_Result* other) {
+  void UnsafeArenaSwap(DSResult* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -352,17 +352,17 @@ class DS_Result PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline DS_Result* New() const final {
-    return CreateMaybeMessage<DS_Result>(nullptr);
+  inline DSResult* New() const final {
+    return CreateMaybeMessage<DSResult>(nullptr);
   }
 
-  DS_Result* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<DS_Result>(arena);
+  DSResult* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DSResult>(arena);
   }
   void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)
     final;
-  void CopyFrom(const DS_Result& from);
-  void MergeFrom(const DS_Result& from);
+  void CopyFrom(const DSResult& from);
+  void MergeFrom(const DSResult& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -377,13 +377,13 @@ class DS_Result PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const;
-  void InternalSwap(DS_Result* other);
+  void InternalSwap(DSResult* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "neptune.packets.DS_Result";
+    return "neptune.packets.DSResult";
   }
   protected:
-  explicit DS_Result(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit DSResult(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -415,16 +415,16 @@ class DS_Result PROTOBUF_FINAL :
   std::string* _internal_mutable_result();
   public:
 
-  // .neptune.packets.E_DS type = 1;
+  // .neptune.packets.eDS type = 1;
   void clear_type();
-  ::neptune::packets::E_DS type() const;
-  void set_type(::neptune::packets::E_DS value);
+  ::neptune::packets::eDS type() const;
+  void set_type(::neptune::packets::eDS value);
   private:
-  ::neptune::packets::E_DS _internal_type() const;
-  void _internal_set_type(::neptune::packets::E_DS value);
+  ::neptune::packets::eDS _internal_type() const;
+  void _internal_set_type(::neptune::packets::eDS value);
   public:
 
-  // @@protoc_insertion_point(class_scope:neptune.packets.DS_Result)
+  // @@protoc_insertion_point(class_scope:neptune.packets.DSResult)
  private:
   class _Internal;
 
@@ -438,23 +438,23 @@ class DS_Result PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class KEM_PublicKey PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:neptune.packets.KEM_PublicKey) */ {
+class KEMPublicKey PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:neptune.packets.KEMPublicKey) */ {
  public:
-  inline KEM_PublicKey() : KEM_PublicKey(nullptr) {}
-  virtual ~KEM_PublicKey();
+  inline KEMPublicKey() : KEMPublicKey(nullptr) {}
+  virtual ~KEMPublicKey();
 
-  KEM_PublicKey(const KEM_PublicKey& from);
-  KEM_PublicKey(KEM_PublicKey&& from) noexcept
-    : KEM_PublicKey() {
+  KEMPublicKey(const KEMPublicKey& from);
+  KEMPublicKey(KEMPublicKey&& from) noexcept
+    : KEMPublicKey() {
     *this = ::std::move(from);
   }
 
-  inline KEM_PublicKey& operator=(const KEM_PublicKey& from) {
+  inline KEMPublicKey& operator=(const KEMPublicKey& from) {
     CopyFrom(from);
     return *this;
   }
-  inline KEM_PublicKey& operator=(KEM_PublicKey&& from) noexcept {
+  inline KEMPublicKey& operator=(KEMPublicKey&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -463,19 +463,19 @@ class KEM_PublicKey PROTOBUF_FINAL :
     return *this;
   }
 
-  static const KEM_PublicKey& default_instance();
+  static const KEMPublicKey& default_instance();
 
-  static inline const KEM_PublicKey* internal_default_instance() {
-    return reinterpret_cast<const KEM_PublicKey*>(
-               &_KEM_PublicKey_default_instance_);
+  static inline const KEMPublicKey* internal_default_instance() {
+    return reinterpret_cast<const KEMPublicKey*>(
+               &_KEMPublicKey_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     2;
 
-  friend void swap(KEM_PublicKey& a, KEM_PublicKey& b) {
+  friend void swap(KEMPublicKey& a, KEMPublicKey& b) {
     a.Swap(&b);
   }
-  inline void Swap(KEM_PublicKey* other) {
+  inline void Swap(KEMPublicKey* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -483,7 +483,7 @@ class KEM_PublicKey PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(KEM_PublicKey* other) {
+  void UnsafeArenaSwap(KEMPublicKey* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -491,17 +491,17 @@ class KEM_PublicKey PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline KEM_PublicKey* New() const final {
-    return CreateMaybeMessage<KEM_PublicKey>(nullptr);
+  inline KEMPublicKey* New() const final {
+    return CreateMaybeMessage<KEMPublicKey>(nullptr);
   }
 
-  KEM_PublicKey* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<KEM_PublicKey>(arena);
+  KEMPublicKey* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<KEMPublicKey>(arena);
   }
   void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)
     final;
-  void CopyFrom(const KEM_PublicKey& from);
-  void MergeFrom(const KEM_PublicKey& from);
+  void CopyFrom(const KEMPublicKey& from);
+  void MergeFrom(const KEMPublicKey& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -516,13 +516,13 @@ class KEM_PublicKey PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const;
-  void InternalSwap(KEM_PublicKey* other);
+  void InternalSwap(KEMPublicKey* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "neptune.packets.KEM_PublicKey";
+    return "neptune.packets.KEMPublicKey";
   }
   protected:
-  explicit KEM_PublicKey(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit KEMPublicKey(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -554,16 +554,16 @@ class KEM_PublicKey PROTOBUF_FINAL :
   std::string* _internal_mutable_key();
   public:
 
-  // .neptune.packets.E_KEM type = 1;
+  // .neptune.packets.eKEM type = 1;
   void clear_type();
-  ::neptune::packets::E_KEM type() const;
-  void set_type(::neptune::packets::E_KEM value);
+  ::neptune::packets::eKEM type() const;
+  void set_type(::neptune::packets::eKEM value);
   private:
-  ::neptune::packets::E_KEM _internal_type() const;
-  void _internal_set_type(::neptune::packets::E_KEM value);
+  ::neptune::packets::eKEM _internal_type() const;
+  void _internal_set_type(::neptune::packets::eKEM value);
   public:
 
-  // @@protoc_insertion_point(class_scope:neptune.packets.KEM_PublicKey)
+  // @@protoc_insertion_point(class_scope:neptune.packets.KEMPublicKey)
  private:
   class _Internal;
 
@@ -680,58 +680,58 @@ class Handshake PROTOBUF_FINAL :
     kSaltFieldNumber = 5,
     kVersionFieldNumber = 1,
   };
-  // repeated .neptune.packets.KEM_PublicKey kem_keys = 2;
+  // repeated .neptune.packets.KEMPublicKey kem_keys = 2;
   int kem_keys_size() const;
   private:
   int _internal_kem_keys_size() const;
   public:
   void clear_kem_keys();
-  ::neptune::packets::KEM_PublicKey* mutable_kem_keys(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::KEM_PublicKey >*
+  ::neptune::packets::KEMPublicKey* mutable_kem_keys(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::KEMPublicKey >*
       mutable_kem_keys();
   private:
-  const ::neptune::packets::KEM_PublicKey& _internal_kem_keys(int index) const;
-  ::neptune::packets::KEM_PublicKey* _internal_add_kem_keys();
+  const ::neptune::packets::KEMPublicKey& _internal_kem_keys(int index) const;
+  ::neptune::packets::KEMPublicKey* _internal_add_kem_keys();
   public:
-  const ::neptune::packets::KEM_PublicKey& kem_keys(int index) const;
-  ::neptune::packets::KEM_PublicKey* add_kem_keys();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::KEM_PublicKey >&
+  const ::neptune::packets::KEMPublicKey& kem_keys(int index) const;
+  ::neptune::packets::KEMPublicKey* add_kem_keys();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::KEMPublicKey >&
       kem_keys() const;
 
-  // repeated .neptune.packets.DS_PublicKey ds_keys = 3;
+  // repeated .neptune.packets.DSPublicKey ds_keys = 3;
   int ds_keys_size() const;
   private:
   int _internal_ds_keys_size() const;
   public:
   void clear_ds_keys();
-  ::neptune::packets::DS_PublicKey* mutable_ds_keys(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DS_PublicKey >*
+  ::neptune::packets::DSPublicKey* mutable_ds_keys(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DSPublicKey >*
       mutable_ds_keys();
   private:
-  const ::neptune::packets::DS_PublicKey& _internal_ds_keys(int index) const;
-  ::neptune::packets::DS_PublicKey* _internal_add_ds_keys();
+  const ::neptune::packets::DSPublicKey& _internal_ds_keys(int index) const;
+  ::neptune::packets::DSPublicKey* _internal_add_ds_keys();
   public:
-  const ::neptune::packets::DS_PublicKey& ds_keys(int index) const;
-  ::neptune::packets::DS_PublicKey* add_ds_keys();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DS_PublicKey >&
+  const ::neptune::packets::DSPublicKey& ds_keys(int index) const;
+  ::neptune::packets::DSPublicKey* add_ds_keys();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DSPublicKey >&
       ds_keys() const;
 
-  // repeated .neptune.packets.DS_Result ds_results = 4;
+  // repeated .neptune.packets.DSResult ds_results = 4;
   int ds_results_size() const;
   private:
   int _internal_ds_results_size() const;
   public:
   void clear_ds_results();
-  ::neptune::packets::DS_Result* mutable_ds_results(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DS_Result >*
+  ::neptune::packets::DSResult* mutable_ds_results(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DSResult >*
       mutable_ds_results();
   private:
-  const ::neptune::packets::DS_Result& _internal_ds_results(int index) const;
-  ::neptune::packets::DS_Result* _internal_add_ds_results();
+  const ::neptune::packets::DSResult& _internal_ds_results(int index) const;
+  ::neptune::packets::DSResult* _internal_add_ds_results();
   public:
-  const ::neptune::packets::DS_Result& ds_results(int index) const;
-  ::neptune::packets::DS_Result* add_ds_results();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DS_Result >&
+  const ::neptune::packets::DSResult& ds_results(int index) const;
+  ::neptune::packets::DSResult* add_ds_results();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DSResult >&
       ds_results() const;
 
   // bytes salt = 5;
@@ -766,9 +766,9 @@ class Handshake PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::KEM_PublicKey > kem_keys_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DS_PublicKey > ds_keys_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DS_Result > ds_results_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::KEMPublicKey > kem_keys_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DSPublicKey > ds_keys_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DSResult > ds_results_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr salt_;
   ::PROTOBUF_NAMESPACE_ID::uint32 version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -783,79 +783,79 @@ class Handshake PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// DS_PublicKey
+// DSPublicKey
 
-// .neptune.packets.E_DS type = 1;
-inline void DS_PublicKey::clear_type() {
+// .neptune.packets.eDS type = 1;
+inline void DSPublicKey::clear_type() {
   type_ = 0;
 }
-inline ::neptune::packets::E_DS DS_PublicKey::_internal_type() const {
-  return static_cast< ::neptune::packets::E_DS >(type_);
+inline ::neptune::packets::eDS DSPublicKey::_internal_type() const {
+  return static_cast< ::neptune::packets::eDS >(type_);
 }
-inline ::neptune::packets::E_DS DS_PublicKey::type() const {
-  // @@protoc_insertion_point(field_get:neptune.packets.DS_PublicKey.type)
+inline ::neptune::packets::eDS DSPublicKey::type() const {
+  // @@protoc_insertion_point(field_get:neptune.packets.DSPublicKey.type)
   return _internal_type();
 }
-inline void DS_PublicKey::_internal_set_type(::neptune::packets::E_DS value) {
+inline void DSPublicKey::_internal_set_type(::neptune::packets::eDS value) {
   
   type_ = value;
 }
-inline void DS_PublicKey::set_type(::neptune::packets::E_DS value) {
+inline void DSPublicKey::set_type(::neptune::packets::eDS value) {
   _internal_set_type(value);
-  // @@protoc_insertion_point(field_set:neptune.packets.DS_PublicKey.type)
+  // @@protoc_insertion_point(field_set:neptune.packets.DSPublicKey.type)
 }
 
 // bytes key = 2;
-inline void DS_PublicKey::clear_key() {
+inline void DSPublicKey::clear_key() {
   key_.ClearToEmpty();
 }
-inline const std::string& DS_PublicKey::key() const {
-  // @@protoc_insertion_point(field_get:neptune.packets.DS_PublicKey.key)
+inline const std::string& DSPublicKey::key() const {
+  // @@protoc_insertion_point(field_get:neptune.packets.DSPublicKey.key)
   return _internal_key();
 }
-inline void DS_PublicKey::set_key(const std::string& value) {
+inline void DSPublicKey::set_key(const std::string& value) {
   _internal_set_key(value);
-  // @@protoc_insertion_point(field_set:neptune.packets.DS_PublicKey.key)
+  // @@protoc_insertion_point(field_set:neptune.packets.DSPublicKey.key)
 }
-inline std::string* DS_PublicKey::mutable_key() {
-  // @@protoc_insertion_point(field_mutable:neptune.packets.DS_PublicKey.key)
+inline std::string* DSPublicKey::mutable_key() {
+  // @@protoc_insertion_point(field_mutable:neptune.packets.DSPublicKey.key)
   return _internal_mutable_key();
 }
-inline const std::string& DS_PublicKey::_internal_key() const {
+inline const std::string& DSPublicKey::_internal_key() const {
   return key_.Get();
 }
-inline void DS_PublicKey::_internal_set_key(const std::string& value) {
+inline void DSPublicKey::_internal_set_key(const std::string& value) {
   
   key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void DS_PublicKey::set_key(std::string&& value) {
+inline void DSPublicKey::set_key(std::string&& value) {
   
   key_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:neptune.packets.DS_PublicKey.key)
+  // @@protoc_insertion_point(field_set_rvalue:neptune.packets.DSPublicKey.key)
 }
-inline void DS_PublicKey::set_key(const char* value) {
+inline void DSPublicKey::set_key(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:neptune.packets.DS_PublicKey.key)
+  // @@protoc_insertion_point(field_set_char:neptune.packets.DSPublicKey.key)
 }
-inline void DS_PublicKey::set_key(const void* value,
+inline void DSPublicKey::set_key(const void* value,
     size_t size) {
   
   key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:neptune.packets.DS_PublicKey.key)
+  // @@protoc_insertion_point(field_set_pointer:neptune.packets.DSPublicKey.key)
 }
-inline std::string* DS_PublicKey::_internal_mutable_key() {
+inline std::string* DSPublicKey::_internal_mutable_key() {
   
   return key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* DS_PublicKey::release_key() {
-  // @@protoc_insertion_point(field_release:neptune.packets.DS_PublicKey.key)
+inline std::string* DSPublicKey::release_key() {
+  // @@protoc_insertion_point(field_release:neptune.packets.DSPublicKey.key)
   return key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void DS_PublicKey::set_allocated_key(std::string* key) {
+inline void DSPublicKey::set_allocated_key(std::string* key) {
   if (key != nullptr) {
     
   } else {
@@ -863,84 +863,84 @@ inline void DS_PublicKey::set_allocated_key(std::string* key) {
   }
   key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), key,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:neptune.packets.DS_PublicKey.key)
+  // @@protoc_insertion_point(field_set_allocated:neptune.packets.DSPublicKey.key)
 }
 
 // -------------------------------------------------------------------
 
-// DS_Result
+// DSResult
 
-// .neptune.packets.E_DS type = 1;
-inline void DS_Result::clear_type() {
+// .neptune.packets.eDS type = 1;
+inline void DSResult::clear_type() {
   type_ = 0;
 }
-inline ::neptune::packets::E_DS DS_Result::_internal_type() const {
-  return static_cast< ::neptune::packets::E_DS >(type_);
+inline ::neptune::packets::eDS DSResult::_internal_type() const {
+  return static_cast< ::neptune::packets::eDS >(type_);
 }
-inline ::neptune::packets::E_DS DS_Result::type() const {
-  // @@protoc_insertion_point(field_get:neptune.packets.DS_Result.type)
+inline ::neptune::packets::eDS DSResult::type() const {
+  // @@protoc_insertion_point(field_get:neptune.packets.DSResult.type)
   return _internal_type();
 }
-inline void DS_Result::_internal_set_type(::neptune::packets::E_DS value) {
+inline void DSResult::_internal_set_type(::neptune::packets::eDS value) {
   
   type_ = value;
 }
-inline void DS_Result::set_type(::neptune::packets::E_DS value) {
+inline void DSResult::set_type(::neptune::packets::eDS value) {
   _internal_set_type(value);
-  // @@protoc_insertion_point(field_set:neptune.packets.DS_Result.type)
+  // @@protoc_insertion_point(field_set:neptune.packets.DSResult.type)
 }
 
 // bytes result = 2;
-inline void DS_Result::clear_result() {
+inline void DSResult::clear_result() {
   result_.ClearToEmpty();
 }
-inline const std::string& DS_Result::result() const {
-  // @@protoc_insertion_point(field_get:neptune.packets.DS_Result.result)
+inline const std::string& DSResult::result() const {
+  // @@protoc_insertion_point(field_get:neptune.packets.DSResult.result)
   return _internal_result();
 }
-inline void DS_Result::set_result(const std::string& value) {
+inline void DSResult::set_result(const std::string& value) {
   _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:neptune.packets.DS_Result.result)
+  // @@protoc_insertion_point(field_set:neptune.packets.DSResult.result)
 }
-inline std::string* DS_Result::mutable_result() {
-  // @@protoc_insertion_point(field_mutable:neptune.packets.DS_Result.result)
+inline std::string* DSResult::mutable_result() {
+  // @@protoc_insertion_point(field_mutable:neptune.packets.DSResult.result)
   return _internal_mutable_result();
 }
-inline const std::string& DS_Result::_internal_result() const {
+inline const std::string& DSResult::_internal_result() const {
   return result_.Get();
 }
-inline void DS_Result::_internal_set_result(const std::string& value) {
+inline void DSResult::_internal_set_result(const std::string& value) {
   
   result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void DS_Result::set_result(std::string&& value) {
+inline void DSResult::set_result(std::string&& value) {
   
   result_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:neptune.packets.DS_Result.result)
+  // @@protoc_insertion_point(field_set_rvalue:neptune.packets.DSResult.result)
 }
-inline void DS_Result::set_result(const char* value) {
+inline void DSResult::set_result(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:neptune.packets.DS_Result.result)
+  // @@protoc_insertion_point(field_set_char:neptune.packets.DSResult.result)
 }
-inline void DS_Result::set_result(const void* value,
+inline void DSResult::set_result(const void* value,
     size_t size) {
   
   result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:neptune.packets.DS_Result.result)
+  // @@protoc_insertion_point(field_set_pointer:neptune.packets.DSResult.result)
 }
-inline std::string* DS_Result::_internal_mutable_result() {
+inline std::string* DSResult::_internal_mutable_result() {
   
   return result_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* DS_Result::release_result() {
-  // @@protoc_insertion_point(field_release:neptune.packets.DS_Result.result)
+inline std::string* DSResult::release_result() {
+  // @@protoc_insertion_point(field_release:neptune.packets.DSResult.result)
   return result_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void DS_Result::set_allocated_result(std::string* result) {
+inline void DSResult::set_allocated_result(std::string* result) {
   if (result != nullptr) {
     
   } else {
@@ -948,84 +948,84 @@ inline void DS_Result::set_allocated_result(std::string* result) {
   }
   result_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), result,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:neptune.packets.DS_Result.result)
+  // @@protoc_insertion_point(field_set_allocated:neptune.packets.DSResult.result)
 }
 
 // -------------------------------------------------------------------
 
-// KEM_PublicKey
+// KEMPublicKey
 
-// .neptune.packets.E_KEM type = 1;
-inline void KEM_PublicKey::clear_type() {
+// .neptune.packets.eKEM type = 1;
+inline void KEMPublicKey::clear_type() {
   type_ = 0;
 }
-inline ::neptune::packets::E_KEM KEM_PublicKey::_internal_type() const {
-  return static_cast< ::neptune::packets::E_KEM >(type_);
+inline ::neptune::packets::eKEM KEMPublicKey::_internal_type() const {
+  return static_cast< ::neptune::packets::eKEM >(type_);
 }
-inline ::neptune::packets::E_KEM KEM_PublicKey::type() const {
-  // @@protoc_insertion_point(field_get:neptune.packets.KEM_PublicKey.type)
+inline ::neptune::packets::eKEM KEMPublicKey::type() const {
+  // @@protoc_insertion_point(field_get:neptune.packets.KEMPublicKey.type)
   return _internal_type();
 }
-inline void KEM_PublicKey::_internal_set_type(::neptune::packets::E_KEM value) {
+inline void KEMPublicKey::_internal_set_type(::neptune::packets::eKEM value) {
   
   type_ = value;
 }
-inline void KEM_PublicKey::set_type(::neptune::packets::E_KEM value) {
+inline void KEMPublicKey::set_type(::neptune::packets::eKEM value) {
   _internal_set_type(value);
-  // @@protoc_insertion_point(field_set:neptune.packets.KEM_PublicKey.type)
+  // @@protoc_insertion_point(field_set:neptune.packets.KEMPublicKey.type)
 }
 
 // bytes key = 2;
-inline void KEM_PublicKey::clear_key() {
+inline void KEMPublicKey::clear_key() {
   key_.ClearToEmpty();
 }
-inline const std::string& KEM_PublicKey::key() const {
-  // @@protoc_insertion_point(field_get:neptune.packets.KEM_PublicKey.key)
+inline const std::string& KEMPublicKey::key() const {
+  // @@protoc_insertion_point(field_get:neptune.packets.KEMPublicKey.key)
   return _internal_key();
 }
-inline void KEM_PublicKey::set_key(const std::string& value) {
+inline void KEMPublicKey::set_key(const std::string& value) {
   _internal_set_key(value);
-  // @@protoc_insertion_point(field_set:neptune.packets.KEM_PublicKey.key)
+  // @@protoc_insertion_point(field_set:neptune.packets.KEMPublicKey.key)
 }
-inline std::string* KEM_PublicKey::mutable_key() {
-  // @@protoc_insertion_point(field_mutable:neptune.packets.KEM_PublicKey.key)
+inline std::string* KEMPublicKey::mutable_key() {
+  // @@protoc_insertion_point(field_mutable:neptune.packets.KEMPublicKey.key)
   return _internal_mutable_key();
 }
-inline const std::string& KEM_PublicKey::_internal_key() const {
+inline const std::string& KEMPublicKey::_internal_key() const {
   return key_.Get();
 }
-inline void KEM_PublicKey::_internal_set_key(const std::string& value) {
+inline void KEMPublicKey::_internal_set_key(const std::string& value) {
   
   key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void KEM_PublicKey::set_key(std::string&& value) {
+inline void KEMPublicKey::set_key(std::string&& value) {
   
   key_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:neptune.packets.KEM_PublicKey.key)
+  // @@protoc_insertion_point(field_set_rvalue:neptune.packets.KEMPublicKey.key)
 }
-inline void KEM_PublicKey::set_key(const char* value) {
+inline void KEMPublicKey::set_key(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:neptune.packets.KEM_PublicKey.key)
+  // @@protoc_insertion_point(field_set_char:neptune.packets.KEMPublicKey.key)
 }
-inline void KEM_PublicKey::set_key(const void* value,
+inline void KEMPublicKey::set_key(const void* value,
     size_t size) {
   
   key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:neptune.packets.KEM_PublicKey.key)
+  // @@protoc_insertion_point(field_set_pointer:neptune.packets.KEMPublicKey.key)
 }
-inline std::string* KEM_PublicKey::_internal_mutable_key() {
+inline std::string* KEMPublicKey::_internal_mutable_key() {
   
   return key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* KEM_PublicKey::release_key() {
-  // @@protoc_insertion_point(field_release:neptune.packets.KEM_PublicKey.key)
+inline std::string* KEMPublicKey::release_key() {
+  // @@protoc_insertion_point(field_release:neptune.packets.KEMPublicKey.key)
   return key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void KEM_PublicKey::set_allocated_key(std::string* key) {
+inline void KEMPublicKey::set_allocated_key(std::string* key) {
   if (key != nullptr) {
     
   } else {
@@ -1033,7 +1033,7 @@ inline void KEM_PublicKey::set_allocated_key(std::string* key) {
   }
   key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), key,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:neptune.packets.KEM_PublicKey.key)
+  // @@protoc_insertion_point(field_set_allocated:neptune.packets.KEMPublicKey.key)
 }
 
 // -------------------------------------------------------------------
@@ -1060,7 +1060,7 @@ inline void Handshake::set_version(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:neptune.packets.Handshake.version)
 }
 
-// repeated .neptune.packets.KEM_PublicKey kem_keys = 2;
+// repeated .neptune.packets.KEMPublicKey kem_keys = 2;
 inline int Handshake::_internal_kem_keys_size() const {
   return kem_keys_.size();
 }
@@ -1070,36 +1070,36 @@ inline int Handshake::kem_keys_size() const {
 inline void Handshake::clear_kem_keys() {
   kem_keys_.Clear();
 }
-inline ::neptune::packets::KEM_PublicKey* Handshake::mutable_kem_keys(int index) {
+inline ::neptune::packets::KEMPublicKey* Handshake::mutable_kem_keys(int index) {
   // @@protoc_insertion_point(field_mutable:neptune.packets.Handshake.kem_keys)
   return kem_keys_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::KEM_PublicKey >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::KEMPublicKey >*
 Handshake::mutable_kem_keys() {
   // @@protoc_insertion_point(field_mutable_list:neptune.packets.Handshake.kem_keys)
   return &kem_keys_;
 }
-inline const ::neptune::packets::KEM_PublicKey& Handshake::_internal_kem_keys(int index) const {
+inline const ::neptune::packets::KEMPublicKey& Handshake::_internal_kem_keys(int index) const {
   return kem_keys_.Get(index);
 }
-inline const ::neptune::packets::KEM_PublicKey& Handshake::kem_keys(int index) const {
+inline const ::neptune::packets::KEMPublicKey& Handshake::kem_keys(int index) const {
   // @@protoc_insertion_point(field_get:neptune.packets.Handshake.kem_keys)
   return _internal_kem_keys(index);
 }
-inline ::neptune::packets::KEM_PublicKey* Handshake::_internal_add_kem_keys() {
+inline ::neptune::packets::KEMPublicKey* Handshake::_internal_add_kem_keys() {
   return kem_keys_.Add();
 }
-inline ::neptune::packets::KEM_PublicKey* Handshake::add_kem_keys() {
+inline ::neptune::packets::KEMPublicKey* Handshake::add_kem_keys() {
   // @@protoc_insertion_point(field_add:neptune.packets.Handshake.kem_keys)
   return _internal_add_kem_keys();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::KEM_PublicKey >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::KEMPublicKey >&
 Handshake::kem_keys() const {
   // @@protoc_insertion_point(field_list:neptune.packets.Handshake.kem_keys)
   return kem_keys_;
 }
 
-// repeated .neptune.packets.DS_PublicKey ds_keys = 3;
+// repeated .neptune.packets.DSPublicKey ds_keys = 3;
 inline int Handshake::_internal_ds_keys_size() const {
   return ds_keys_.size();
 }
@@ -1109,36 +1109,36 @@ inline int Handshake::ds_keys_size() const {
 inline void Handshake::clear_ds_keys() {
   ds_keys_.Clear();
 }
-inline ::neptune::packets::DS_PublicKey* Handshake::mutable_ds_keys(int index) {
+inline ::neptune::packets::DSPublicKey* Handshake::mutable_ds_keys(int index) {
   // @@protoc_insertion_point(field_mutable:neptune.packets.Handshake.ds_keys)
   return ds_keys_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DS_PublicKey >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DSPublicKey >*
 Handshake::mutable_ds_keys() {
   // @@protoc_insertion_point(field_mutable_list:neptune.packets.Handshake.ds_keys)
   return &ds_keys_;
 }
-inline const ::neptune::packets::DS_PublicKey& Handshake::_internal_ds_keys(int index) const {
+inline const ::neptune::packets::DSPublicKey& Handshake::_internal_ds_keys(int index) const {
   return ds_keys_.Get(index);
 }
-inline const ::neptune::packets::DS_PublicKey& Handshake::ds_keys(int index) const {
+inline const ::neptune::packets::DSPublicKey& Handshake::ds_keys(int index) const {
   // @@protoc_insertion_point(field_get:neptune.packets.Handshake.ds_keys)
   return _internal_ds_keys(index);
 }
-inline ::neptune::packets::DS_PublicKey* Handshake::_internal_add_ds_keys() {
+inline ::neptune::packets::DSPublicKey* Handshake::_internal_add_ds_keys() {
   return ds_keys_.Add();
 }
-inline ::neptune::packets::DS_PublicKey* Handshake::add_ds_keys() {
+inline ::neptune::packets::DSPublicKey* Handshake::add_ds_keys() {
   // @@protoc_insertion_point(field_add:neptune.packets.Handshake.ds_keys)
   return _internal_add_ds_keys();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DS_PublicKey >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DSPublicKey >&
 Handshake::ds_keys() const {
   // @@protoc_insertion_point(field_list:neptune.packets.Handshake.ds_keys)
   return ds_keys_;
 }
 
-// repeated .neptune.packets.DS_Result ds_results = 4;
+// repeated .neptune.packets.DSResult ds_results = 4;
 inline int Handshake::_internal_ds_results_size() const {
   return ds_results_.size();
 }
@@ -1148,30 +1148,30 @@ inline int Handshake::ds_results_size() const {
 inline void Handshake::clear_ds_results() {
   ds_results_.Clear();
 }
-inline ::neptune::packets::DS_Result* Handshake::mutable_ds_results(int index) {
+inline ::neptune::packets::DSResult* Handshake::mutable_ds_results(int index) {
   // @@protoc_insertion_point(field_mutable:neptune.packets.Handshake.ds_results)
   return ds_results_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DS_Result >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DSResult >*
 Handshake::mutable_ds_results() {
   // @@protoc_insertion_point(field_mutable_list:neptune.packets.Handshake.ds_results)
   return &ds_results_;
 }
-inline const ::neptune::packets::DS_Result& Handshake::_internal_ds_results(int index) const {
+inline const ::neptune::packets::DSResult& Handshake::_internal_ds_results(int index) const {
   return ds_results_.Get(index);
 }
-inline const ::neptune::packets::DS_Result& Handshake::ds_results(int index) const {
+inline const ::neptune::packets::DSResult& Handshake::ds_results(int index) const {
   // @@protoc_insertion_point(field_get:neptune.packets.Handshake.ds_results)
   return _internal_ds_results(index);
 }
-inline ::neptune::packets::DS_Result* Handshake::_internal_add_ds_results() {
+inline ::neptune::packets::DSResult* Handshake::_internal_add_ds_results() {
   return ds_results_.Add();
 }
-inline ::neptune::packets::DS_Result* Handshake::add_ds_results() {
+inline ::neptune::packets::DSResult* Handshake::add_ds_results() {
   // @@protoc_insertion_point(field_add:neptune.packets.Handshake.ds_results)
   return _internal_add_ds_results();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DS_Result >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::neptune::packets::DSResult >&
 Handshake::ds_results() const {
   // @@protoc_insertion_point(field_list:neptune.packets.Handshake.ds_results)
   return ds_results_;
@@ -1255,9 +1255,9 @@ inline void Handshake::set_allocated_salt(std::string* salt) {
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::neptune::packets::E_DS> : ::std::true_type {};
-template <> struct is_proto_enum< ::neptune::packets::E_DS_HASH> : ::std::true_type {};
-template <> struct is_proto_enum< ::neptune::packets::E_KEM> : ::std::true_type {};
+template <> struct is_proto_enum< ::neptune::packets::eDS> : ::std::true_type {};
+template <> struct is_proto_enum< ::neptune::packets::eHashing> : ::std::true_type {};
+template <> struct is_proto_enum< ::neptune::packets::eKEM> : ::std::true_type {};
 
 PROTOBUF_NAMESPACE_CLOSE
 

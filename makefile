@@ -37,7 +37,7 @@ protobufs: $(PBUF_SRC)
 PBUF_CC = $(wildcard  $(PBUF_OUT_DIR)/*.pb.cc)
 
 packets: protobufs $(PBUF_CC)
-	g++ $(FLAGS) -c $(PBUF_CC) $(PBUF_LIB) -o $(OBJ_FOLDER)/$(PBUF_OBJ)
+	g++ $(FLAGS) -c $(PBUF_CC) -o $(OBJ_FOLDER)/$(PBUF_OBJ)
 
 SABER_SRC=$(wildcard saber/*.c) $(SABER_COMMON_SRC)
 

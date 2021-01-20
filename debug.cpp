@@ -1,4 +1,4 @@
-typedef unsigned char byte;
+#include "debug.h"
 
 #include <iostream>
 
