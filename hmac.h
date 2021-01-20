@@ -8,5 +8,5 @@
 
 namespace neptune
 {
-    void hmac(packets::eHashing hash_alg, byte *key, size_t key_sz, byte *data, size_t data_sz, byte *result, size_t &result_sz);
+    void hmac(packets::eHashing hash_alg, byte *key, size_t key_sz, byte *data, size_t data_sz, byte *&result, size_t &result_sz);
 }

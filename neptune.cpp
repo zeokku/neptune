@@ -24,7 +24,6 @@
 
 #include "saber/rng.h"
 #include "saber/api.h"
-#include "saber/SABER_params.h"
 
 #include "hmac.h"
 
@@ -43,47 +42,50 @@ int main()
         printf("Rng init: %s", wc_GetErrorString(wc_res));
     }
 
-    size_t outsize;
+    // byte *hmac;
+    // size_t outsize;
 
-    neptune::hmac(eHashing::SHA3_256, (byte *)("asss"), 4, (byte *)"asss", 4, nullptr, outsize);
+    // neptune::hmac(eHashing::SHA3_256, (byte *)("asss"), 4, (byte *)"asss", 4, hmac, outsize);
 
-    // uint8_t pk[SABER_PUBLICKEYBYTES];
-    // uint8_t sk[SABER_SECRETKEYBYTES];
-    // uint8_t c[SABER_CIPHERTEXTBYTES];
-    // uint8_t k_a[SABER_KEYBYTES], k_b[SABER_KEYBYTES];
+    // print_bytes(hmac, outsize);
 
-    // unsigned char entropy_input[48];
-    // wc_res = wc_RNG_GenerateBlock(&rng, entropy_input, sizeof(entropy_input));
+    uint8_t pk[SABER_PUBLICKEYBYTES];
+    uint8_t sk[SABER_SECRETKEYBYTES];
+    uint8_t c[SABER_CIPHERTEXTBYTES];
+    uint8_t k_a[SABER_KEYBYTES], k_b[SABER_KEYBYTES];
 
-    // // for (int i = 0; i < 48; i++)
-    // // {
-    // //     //debug
-    // //     //entropy_input[i] = i;
-    // //     //entropy_input[i] = rand() % 256;
+    unsigned char entropy_input[48];
+    wc_res = wc_RNG_GenerateBlock(&rng, entropy_input, sizeof(entropy_input));
 
-    // //     wc_res = wc_RNG_GenerateByte(&rng, &entropy_input[i]);
-    // // }
+    // for (int i = 0; i < 48; i++)
+    // {
+    //     //debug
+    //     //entropy_input[i] = i;
+    //     //entropy_input[i] = rand() % 256;
 
-    // randombytes_init(entropy_input, NULL, 256);
+    //     wc_res = wc_RNG_GenerateByte(&rng, &entropy_input[i]);
+    // }
 
-    // saber_kem_keypair(pk, sk);
+    randombytes_init(entropy_input, NULL, 256);
 
-    // printf("pk\n");
-    // print_bytes(pk, sizeof(pk));
+    saber::kem_keypair(pk, sk);
 
-    // printf("sk\n");
-    // print_bytes(sk, sizeof(sk));
+    printf("pk\n");
+    print_bytes(pk, sizeof(pk));
 
-    // saber_kem_enc(c, k_a, pk);
-    // saber_kem_dec(k_b, c, sk);
+    printf("sk\n");
+    print_bytes(sk, sizeof(sk));
 
-    // printf("k_a\n");
-    // print_bytes(k_a, sizeof(k_a));
+    saber::kem_enc(c, k_a, pk);
+    saber::kem_dec(k_b, c, sk);
 
-    // printf("k_b\n");
-    // print_bytes(k_b, sizeof(k_b));
+    printf("k_a\n");
+    print_bytes(k_a, sizeof(k_a));
 
-    // return 0;
+    printf("k_b\n");
+    print_bytes(k_b, sizeof(k_b));
+
+    return 0;
 
     //#######
 

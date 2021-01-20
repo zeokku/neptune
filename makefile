@@ -10,7 +10,7 @@ PBUF_LIB = /usr/lib/libprotobuf-lite.a #-lprotobuf-lite
 #-Wl,-Bstatic
 LIBS= /usr/lib/libwolfssl.a $(PBUF_LIB) #-lwolfssl 
 
-ALGOS_LIBS = ./saber/saber.a
+ALGOS_LIBS = ./saber/saber_complete.a
 
 SRC:=$(wildcard  *.cpp) $(wildcard  *.hpp)
 OUT_EXE=neptune
@@ -39,14 +39,6 @@ PBUF_CC = $(wildcard  $(PBUF_OUT_DIR)/*.pb.cc)
 packets: protobufs $(PBUF_CC)
 	g++ $(FLAGS) -c $(PBUF_CC) -o $(OBJ_FOLDER)/$(PBUF_OBJ)
 
-SABER_SRC=$(wildcard saber/*.c) $(SABER_COMMON_SRC)
-
-saber: $(SABER_SRC)
-	$(foreach file,$(SABER_SRC), \
-		g++ $(FLAGS) -c $(file) -o $(OBJ_FOLDER)/saber_$(notdir $(basename $(file))).o ; \
-	)
-
-#ar rvs $(OBJ_FOLDER)/saber.a $(wildcard $(OBJ_FOLDER)/saber/*.o)
 
 OBJ_FILES=$(wildcard $(OBJ_FOLDER)/*.o)
 

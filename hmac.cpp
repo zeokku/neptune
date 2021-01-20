@@ -5,7 +5,7 @@ namespace neptune
     //no verification, cuz used internally
     //tools.ietf.org/html/rfc2104
     //returns newely allocated result + its length
-    void hmac(packets::eHashing hash_alg, byte *data, size_t data_sz, byte *key, size_t key_sz, byte *result, size_t &result_sz)
+    void hmac(packets::eHashing hash_alg, byte *data, size_t data_sz, byte *key, size_t key_sz, byte *&result, size_t &result_sz)
     {
         //B - block size
         byte ipad[WC_SHA3_256_BLOCK_SIZE];
@@ -49,7 +49,7 @@ namespace neptune
 
         //
 
-        byte resultSum[SHA3_256_DIGEST_SIZE];
+        byte *resultSum = new byte[SHA3_256_DIGEST_SIZE];
 
         wc_Sha3_256_Update(&sha3, outer, outer_sz);
 
@@ -61,7 +61,10 @@ namespace neptune
 
         wc_Sha3_256_Free(&sha3);
 
-        print_bytes(resultSum, sizeof(resultSum));
+        result = resultSum;
+        result_sz = SHA3_256_DIGEST_SIZE;
+
+        //print_bytes(resultSum, sizeof(resultSum));
     }
 
 } // namespace neptune
