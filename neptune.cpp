@@ -49,41 +49,58 @@ int main()
 
     // print_bytes(hmac, outsize);
 
-    uint8_t pk[SABER_PUBLICKEYBYTES];
-    uint8_t sk[SABER_SECRETKEYBYTES];
-    uint8_t c[SABER_CIPHERTEXTBYTES];
-    uint8_t k_a[SABER_KEYBYTES], k_b[SABER_KEYBYTES];
+    //####################
+
+    uint8_t pk[FIRE_SABER_PUBLICKEYBYTES];
+    uint8_t sk[FIRE_SABER_SECRETKEYBYTES];
+    uint8_t c[FIRE_SABER_CIPHERTEXTBYTES];
+    uint8_t k_a[FIRE_SABER_KEYBYTES], k_b[FIRE_SABER_KEYBYTES];
 
     unsigned char entropy_input[48];
     wc_res = wc_RNG_GenerateBlock(&rng, entropy_input, sizeof(entropy_input));
 
-    // for (int i = 0; i < 48; i++)
-    // {
-    //     //debug
-    //     //entropy_input[i] = i;
-    //     //entropy_input[i] = rand() % 256;
-
-    //     wc_res = wc_RNG_GenerateByte(&rng, &entropy_input[i]);
-    // }
-
     randombytes_init(entropy_input, NULL, 256);
 
-    saber::kem_keypair(pk, sk);
+    fire_saber_kem_keypair(pk, sk);
 
-    printf("pk\n");
+    printf("pk (%d)\n", sizeof(pk));
     print_bytes(pk, sizeof(pk));
 
-    printf("sk\n");
+    printf("sk (%d)\n", sizeof(sk));
     print_bytes(sk, sizeof(sk));
 
-    saber::kem_enc(c, k_a, pk);
-    saber::kem_dec(k_b, c, sk);
+    fire_saber_kem_enc(c, k_a, pk);
+    fire_saber_kem_dec(k_b, c, sk);
 
     printf("k_a\n");
     print_bytes(k_a, sizeof(k_a));
 
     printf("k_b\n");
     print_bytes(k_b, sizeof(k_b));
+
+    //$$$$$$$$$$$$$$$$$$$$$
+
+    uint8_t pk2[SABER_PUBLICKEYBYTES];
+    uint8_t sk2[SABER_SECRETKEYBYTES];
+    uint8_t c2[SABER_CIPHERTEXTBYTES];
+    uint8_t k_a2[SABER_KEYBYTES], k_b2[SABER_KEYBYTES];
+
+    saber_kem_keypair(pk2, sk2);
+
+    printf("pk (%d)\n", sizeof(pk2));
+    print_bytes(pk2, sizeof(pk2));
+
+    printf("sk (%d)\n", sizeof(sk2));
+    print_bytes(sk2, sizeof(sk2));
+
+    saber_kem_enc(c2, k_a2, pk2);
+    saber_kem_dec(k_b2, c2, sk2);
+
+    printf("k_a2\n");
+    print_bytes(k_a2, sizeof(k_a2));
+
+    printf("k_b2\n");
+    print_bytes(k_b2, sizeof(k_b2));
 
     return 0;
 

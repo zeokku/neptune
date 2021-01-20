@@ -76,13 +76,13 @@ static int test_kem_cca()
 
 		//Generation of secret key sk and public key pk pair
 		CLOCK1 = cpucycles();
-		kem_keypair(pk, sk);
+		saber_kem_keypair(pk, sk);
 		CLOCK2 = cpucycles();
 		CLOCK_kp = CLOCK_kp + (CLOCK2 - CLOCK1);
 
 		//Key-Encapsulation call; input: pk; output: ciphertext c, shared-secret k_a;
 		CLOCK1 = cpucycles();
-		kem_enc(c, k_a, pk);
+		saber_kem_enc(c, k_a, pk);
 		CLOCK2 = cpucycles();
 		CLOCK_enc = CLOCK_enc + (CLOCK2 - CLOCK1);
 
@@ -95,7 +95,7 @@ static int test_kem_cca()
 
 		//Key-Decapsulation call; input: sk, c; output: shared-secret k_b;
 		CLOCK1 = cpucycles();
-		kem_dec(k_b, c, sk);
+		saber_kem_dec(k_b, c, sk);
 		CLOCK2 = cpucycles();
 		CLOCK_dec = CLOCK_dec + (CLOCK2 - CLOCK1);
 

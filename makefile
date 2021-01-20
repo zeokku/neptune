@@ -5,12 +5,14 @@ PBUF_OBJ=packets.o
 
 FLAGS=-Wall -std=c++11
 
-PBUF_LIB = /usr/lib/libprotobuf-lite.a #-lprotobuf-lite
+PBUF_LIB = /usr/lib/libprotobuf-lite.a
 
 #-Wl,-Bstatic
 LIBS= /usr/lib/libwolfssl.a $(PBUF_LIB) #-lwolfssl 
 
-ALGOS_LIBS = ./saber/saber_complete.a
+SABER = $(wildcard ./saber/_static/*.a) $(wildcard ./saber/_common/*.o)
+
+ALG_LIBS = $(SABER)
 
 SRC:=$(wildcard  *.cpp) $(wildcard  *.hpp)
 OUT_EXE=neptune
@@ -43,7 +45,7 @@ packets: protobufs $(PBUF_CC)
 OBJ_FILES=$(wildcard $(OBJ_FOLDER)/*.o)
 
 compile: $(SRC)
-	g++ $(FLAGS) $(SRC) $(OBJ_FILES) $(ALGOS_LIBS) $(LIBS) -o $(OUT_EXE)
+	g++ $(FLAGS) $(SRC) $(OBJ_FILES) $(ALG_LIBS) $(LIBS) -o $(OUT_EXE)
 
 run: compile 	
 	./$(OUT_EXE)	

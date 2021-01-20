@@ -3,8 +3,8 @@
 
 /* Change this for different security strengths */
 // #define FIRE_SABER_L 2 /* LightSaber */
-#define FIRE_SABER_L 3 /* Saber */
-// #define FIRE_SABER_L 4 /* FireSaber */
+//#define FIRE_SABER_L 3 /* Saber */
+#define FIRE_SABER_L 4 /* FireSaber */
 
 /* Don't change anything below this line */
 #if FIRE_SABER_L == 2
