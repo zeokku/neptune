@@ -10,7 +10,9 @@ PBUF_LIB = /usr/lib/libprotobuf-lite.a
 #-Wl,-Bstatic
 LIBS= /usr/lib/libwolfssl.a $(PBUF_LIB) #-lwolfssl 
 
-SABER = $(wildcard ./saber/_static/*.a) $(wildcard ./saber/_common/*.o)
+KEMS_FOLDER = kems
+
+SABER = $(wildcard ./$(KEMS_FOLDER)/saber/_static/*.a) $(wildcard ./$(KEMS_FOLDER)/saber/_common/*.o)
 
 ALG_LIBS = $(SABER)
 

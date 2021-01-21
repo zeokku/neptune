@@ -22,10 +22,12 @@
 
 #include "debug.h"
 
-#include "saber/rng.h"
-#include "saber/api.h"
+#include "kems/saber/rng.h"
+#include "kems/saber/api.h"
 
 #include "hmac.h"
+
+//use hashing to generate seed out of ranndom bytes not to
 
 using namespace std;
 using namespace neptune::packets;
@@ -51,6 +53,10 @@ int main()
 
     //####################
 
+    //so linker did actually merge identical functions so flavors don't work
+
+    //fuck this all just wrap each shit in own namespace
+
     uint8_t pk[FIRE_SABER_PUBLICKEYBYTES];
     uint8_t sk[FIRE_SABER_SECRETKEYBYTES];
     uint8_t c[FIRE_SABER_CIPHERTEXTBYTES];
@@ -61,7 +67,7 @@ int main()
 
     randombytes_init(entropy_input, NULL, 256);
 
-    fire_saber_kem_keypair(pk, sk);
+    fire_saber::kem_keypair(pk, sk);
 
     printf("pk (%d)\n", sizeof(pk));
     print_bytes(pk, sizeof(pk));
@@ -69,8 +75,8 @@ int main()
     printf("sk (%d)\n", sizeof(sk));
     print_bytes(sk, sizeof(sk));
 
-    fire_saber_kem_enc(c, k_a, pk);
-    fire_saber_kem_dec(k_b, c, sk);
+    fire_saber::kem_enc(c, k_a, pk);
+    fire_saber::kem_dec(k_b, c, sk);
 
     printf("k_a\n");
     print_bytes(k_a, sizeof(k_a));
@@ -85,7 +91,7 @@ int main()
     uint8_t c2[SABER_CIPHERTEXTBYTES];
     uint8_t k_a2[SABER_KEYBYTES], k_b2[SABER_KEYBYTES];
 
-    saber_kem_keypair(pk2, sk2);
+    saber::kem_keypair(pk2, sk2);
 
     printf("pk (%d)\n", sizeof(pk2));
     print_bytes(pk2, sizeof(pk2));
@@ -93,8 +99,8 @@ int main()
     printf("sk (%d)\n", sizeof(sk2));
     print_bytes(sk2, sizeof(sk2));
 
-    saber_kem_enc(c2, k_a2, pk2);
-    saber_kem_dec(k_b2, c2, sk2);
+    saber::kem_enc(c2, k_a2, pk2);
+    saber::kem_dec(k_b2, c2, sk2);
 
     printf("k_a2\n");
     print_bytes(k_a2, sizeof(k_a2));
