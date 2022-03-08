@@ -47,18 +47,23 @@ https://www.wolfssl.com/forums/topic832-how-to-build-individual-algorithms.html
 
 //check ownership before configure
 
-./configure  --enable-cryptonly --enable-static\
-    --disable-oldtls --disable-tlsv12 --disable-tls13 \
+./configure  --enable-cryptonly \
     --disable-ecc \
     --enable-curve25519 --enable-ed25519 \
     --enable-curve448 --enable-ed448 \
-    --enable-hkdf --disable-dh --enable-rsa \
+    --enable-hkdf --disable-dh --disable-rsa \
     --enable-aes --enable-aesgcm --enable-aesctr --disable-aescbc --disable-des3 \
-    --disable-sha --enable-sha512 --disable-md5 --enable-sha3 \
+    --enable-sha512 --disable-md5 --enable-sha3 \
     --disable-chacha --disable-poly1305 \
-    --enable-fastmath --disable-memory \
+    --enable-fastmath --disable-memory --enable-pkcs12 \
     --prefix=/usr
 
+//--disable-sha 
+//--enable-static
+//--disable-oldtls --disable-tlsv12 --disable-tls13 \
+
+//--enable-pkcs12 pkdf
+//--enable-keygen for rsa key gen
 //--enable-aesctr for unlocking direct aes functions
 //cut:  --enable-compkey --disable-rsa --disable-aescbc
 //leave rsa for benchmarking rsa vs Ed25519
@@ -134,3 +139,10 @@ https://wiki.gentoo.org/wiki/SSH
 change default wsl user
 https://github.com/microsoft/WSL/issues/4276#issuecomment-509364493
 (uid is decimal not hex !!!)
+
+https://blog.cloudflare.com/securing-the-post-quantum-world/
+https://blog.cloudflare.com/sidh-go/
+
+http://cryptowiki.net/index.php?title=Main_Page
+
+https://tools.ietf.org/id/draft-campagna-tls-bike-sike-hybrid-01.html
